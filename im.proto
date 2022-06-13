@@ -1,0 +1,1438 @@
+/**
+ * Copyright (C)2020 NEBULA.  All rights reserved.
+ *
+ * 上位机与中位机ProtoBuf协议文件
+ *
+ */
+syntax = "proto3";
+package g_im;
+
+enum cmd_type {
+    BOARDCAST = 0;                                  /* 广播命令 */
+    STEPFILE_UPDATE = 1;                            /* 工步文件更新 */
+    CHANNEL_STEP_STRAT = 2;                         /* 通道启动工步 */
+    CHANNEL_PAUSE = 3;                              /* 通道暂停 */
+    CHANNEL_CONTINUE = 4;                           /* 通道继续 */
+    CHANNLE_STOP = 5;                               /* 通道停止 */
+    CHANNLE_CLEAR_FAULT = 6;                        /* 通道清除故障 */
+    CHANNEL_DISABLE = 7;                            /* 通道禁用 */
+    CHANNEL_ENABLE = 8;                             /* 通道启用 */
+    CHANNEL_UNION = 9;                              /* 通道并联 */
+    CHANNEL_TRANS = 10;                             /* 通道迁移 */
+    CHANNEL_LINK_CANCEL = 11;                       /* 通道取消联动 */
+    CHANNEL_STEP_JUMP = 12;                         /* 通道工步跳转 */
+    CHANNEL_PAUSE_APPOINT = 13;                     /* 通道预约暂停 */
+    CHANNEL_NEW_STEPFILE_DEL = 14;                  /* 通道NEW工步文件删除 */
+    CHANNEL_ENABLE_BYIP = 15;                       /* IP通道启用禁用 */
+    IM_SOFTVESION_GET = 16;                         /* 中位机版本获取 */
+    IM_SOFT_UPDATE = 17;                            /* 升级中位机 */
+    SYSCONF_UPDATE = 18;                            /* 系统配置更新 */
+    CLOCKTIME_SET = 19;                             /* 系统时间设置 */
+    SELFCHECK_GET = 20;                             /* 获取自检结果 */
+    EXTERN_FILE_UPDATE = 21;                        /* 外设文件更新 */
+    IM_AUTH = 22;                                   /* 授权使用 */
+    IM_AUTH_READ = 23;                              /* 读取授权信息 */
+    SECURITY_FILE_UPDATE = 24;                      /* 安防文件更新 */
+    SECURITY_STOP = 25;                             /* 安防停止 */
+    SECURITY_TRANSFER_MODEL = 26;                   /* 传输模式 */
+    GET_SECURITY_DATA = 27;                         /* 获取安防数据 */
+    FANS_STATE_GET = 28;                            /* 电源柜风机状态 */
+    SECURITY_EX_TEMP_ENABLE = 29;                   /* 安防外部电芯温度启用禁用 */
+    LIGHT_SOUND_ALARM_ENABLE = 30;                  /* 声光报警声音使能 */
+    DATA_STORE_FOR_UNITS = 31;                      /* 库位数据存储 */
+    IM_32VT_ENABLE = 32;                            /* 启用禁用32VT采集 */
+    DATA_STORE_FOR_ALARM = 33;                      /* 告警数据存储 */
+    IM_SYSTEM_RESTART = 34;                         /* 中位机重启 */
+    IM_READ_EEPROM = 35;                            /* 读EEPROM */
+    IM_WRITE_EEPROM = 36;                           /* 写EEPROM */
+    UNIT_CLEAR_FAULT = 37;                          /* 库位清除告警 */
+    DISPLAY_TIME_PROTECTION = 38;                   /* 闲时保护 */
+    STOP_DISPLAY_TIME_RECORD = 39;                  /* 停止闲时记录 */
+    STORAGE_FILE_UPDATE = 40;                       /* 存储数据文件更新 */
+    SECURITY_REST = 41;                             /* 安防复位 */
+    SECURITY_FEEDBACK = 42;                         /* 安防反馈 */
+    ADJUST_RELAY_CONTROL = 43;                      /* 工装校准之继电器控制 */
+    ADJUST_LOAD_PARAM = 44;                         /* 工装校准之加载参数 */
+    ADJUST_DEBUG = 45;                              /* 工装校准之调试查询 */
+    ADJUST_CLEAR_FAULTS = 46;                       /* 工装校准之清除告警 */
+    ADJUST_LOCK = 47;                               /* 工装校准锁定 */
+    ADJUST_UNLOCK = 48;                             /* 工装校准解锁 */
+    ADJUST_TRANS_CONTROL = 49;                      /* 工装校准之透传控制 */
+    NEGATIVE_PRESSURE_ADJUST = 50;                  /* 负压工装校准 */
+    NEGATIVE_PRESSURE_LEAKAGE_DETECT_START = 51;    /* 启动负压测漏 */
+    NEGATIVE_PRESSURE_PLUGGING_DETECT_START = 52;   /* 启动负压测堵 */
+    NEGATIVE_PRESSURE_FILE_UPDATE = 53;             /* 负压文件更新 */
+    PRESS_DISENGAGE = 54;                           /* 压床脱开 */
+    DEVICE_UPDATE_START = 55;                       /* 设备升级开始——上位机将升级包置于中位机的FTP后，给中位机发送此命令 */
+    DEVICE_PASSTHROUGH = 56;                        /* 设备命令透传：当前主要用于下位机版本查询 */
+    GET_DEVICE_UPDATE = 57;                         /* 获取设备更新数据 */
+    DETECTIONFILE_UPDATE = 58;                      /* 更新检测文件 */
+    SET_STOCK_STATE = 59;                           /* 设置库位状态 */
+    NEGATIVE_PRESSURE_CLEAR_FAULT = 60;             /* 负压清除故障 */
+    SWITCH_SECURIT = 61;                            /* 安防开关*/
+    SOUND_LIGHT_ALARM = 62;                         /* 声光报警开关 */
+    ADJUST_LOWERMACHINE_VERSION_READ = 63;          /* 工装校准之下位机读取版本信息 */
+    CMD_TYPES_MAX = 64;
+}
+
+enum cmd_result {
+    CMD_SUCCESS = 0;                /* 成功 */
+    CMD_NO_MATCH = 1;               /* 指令有误 */
+    FILE_NOEXIST = 2;               /* 文件不存在 */
+    FILE_OPEN_FAIL = 3;             /* 文件打开失败 */
+    FILE_FORMAT_ERR = 4;            /* 文件格式有误 */
+    FILE_COPY_FAIL = 5;             /* 文件拷贝失败 */
+    FILE_RENAME_FAILE = 6;          /* 文件重命名 */
+    FILE_PARSE_FAIL = 7;            /* 文件解析失败 */
+    FILE_DEL_FAIL = 8;              /* 文件删除失败 */
+    FILE_SAVE_FILE = 9;             /* 文件保存失败 */
+    LOWER_CONNECT_TIMEOUT = 11;     /* 下位机通讯超时 */
+    CHANNEL_NO_MATCH = 12;          /* 通道号不匹配 */
+    PARAM_INVALID = 13;             /* 参数非法 */
+    CMD_NO_DEAL = 14;               /* 命令无法执行（设备故障、初始化完成）*/
+    WORK_FILE_INVALID = 15;         /* 工况文件无效 */
+    SYSTEM_TIME_FALSE = 16;         /* 系统时间不对, 早于2000年1月1日 */
+    GET_CUSTOM_VAR_FAIL = 17;       /* 获取自定义变量失败 */
+    IM_DEALING_CMD_TO_LOWER = 18;   /* 中位机正在下发指令 */
+    LOWER_ALARM = 19;               /* 下位机告警 */
+    PASSWD_FALSE = 20;              /* 密码错误 */
+    SECURITY_SET_INVALID = 21;      /* 安防设置不合法 */
+    CHANNEL_BUSY = 22;              /* 通道忙 */
+    AUTH_TIME_INVALID = 23;         /* 授权时间早于系统时间 */
+    AUTH_TIMES_EXCEED = 24;         /* 超过授权次数 */
+    AUTH_TIME_EXCEED = 25;          /* 超过授权时间 */
+    CHANNEL_NO_EXIST = 26;          /* 通道不存在 */
+    SYSTIME_SET_FAIL = 27;          /* 系统时间设置失败 */
+    CHANNEL_TRANS_FAIL = 28;        /* 通道迁移失败 */
+    STEP_SET_ERROR = 29;            /* 工步设置不合法 */
+    STEP_VERSION_ERROR = 30;        /* 工步版本不匹配 */
+    IM_NO_MEMORY = 31;              /* 内存不足 */
+    IM_OTHER_ERR_MSG = 32;          /* 其他错误 */
+    NP_PRESSURE = 33;               /* 未泄压 */
+    IS_PRESSURE = 34;               /* 正在泄压 */
+    STOCK_RUNNING = 35;             /* 库位在运行中 */
+}
+
+enum sysconf_update_type {
+    UPDATE_ALL = 0;         /* 全部更新 */
+    CHANNEL_UPDATE = 1;     /* 通道配置信息更新 */
+    IM_INFO_UPDATE = 2;     /* 中位机信息更新 */
+    ETH0_UPDATE = 3;        /* eth0 信息更新 */
+    ETH1_UPDATE = 4;        /* eth1 信息更新 */
+    PC_INFO_UPDATE = 5;     /* 上位机信息更新 */
+    MOBILE_UPDATE = 6;      /* 移动网络信息更新 */
+    CLOUD_UPDATE = 7;       /* 云平台信息更新 */
+    PeripheralsUpdate = 8;  /* 外围设备信息更新 */
+}
+
+enum auth_type {
+    UNLIMITED = 0;          /* 无限制 */
+    AUTH_BY_TIMES = 1;      /* 根据次数授权 */
+    AUTH_BY_TIMER = 2;      /* 根据时间授权 */
+}
+
+/* 通道状态 */
+enum channel_st{
+    CHANNEL_ST_READY = 0;                   /* 就绪 */
+    CHANNEL_ST_CHARGE = 1;                  /* 充电 */
+    CHANNEL_ST_DISCHARGE = 2;               /* 放电 */
+    CHANNEL_ST_STEWING = 3;                 /* 静置 */
+    CHANNEL_ST_WORK_CONDITION = 4;          /* 路谱 */
+    CHANNEL_ST_OK = 5;                      /* 结束OK */
+    CHANNEL_ST_NOK = 6;                     /* 结束NG */
+    CHANNEL_ST_DEVICE_ALARM = 7;            /* 设备告警 */
+    CHANNEL_ST_USER_TERMINATE = 8;          /* 用户终止 */
+    CHANNEL_ST_COMM_ERROR = 9;              /* 下位机通讯错误 */
+    CHANNEL_ST_NOT_CONNECT_BATTERY = 10;    /* 未接电池 */
+    CHANNEL_ST_DISABLE = 11;                /* 未启用 */
+    CHANNEL_ST_PAUSE = 12;                  /* 暂停 */
+    CHANNEL_ST_APPOINT_TIME_PAUSE = 13;     /* 预约时间暂停 */
+    CHANNEL_ST_APPOINT_STEP_PAUSE = 14;     /* 预约工步暂停 */
+    CHANNEL_ST_APPOINT_LOOP_PAUSE = 15;     /* 预约循环号暂停 */
+    CHANNEL_ST_EXTERN_COMM_ERROR = 16;      /* 外设通信错误 */
+    CHANNEL_ST_WAIT_FOR_LINKAGE = 19;       /* 等待联动 */
+    CHANNEL_ST_FREE_TIME_RECORD = 20;       /* 闲时记录 */
+    CHANNEL_ST_CC = 21;                     /* 充电CC */
+    CHANNEL_ST_CV = 22;                     /* 充电CV */
+    CHANNEL_ST_CCCV = 23;                   /* 充电CC-CV */
+    CHANNEL_ST_DC = 24;                     /* 放电DC */
+    CHANNEL_ADJUSTING = 25;                 /* 校准中 */
+    CHANNEL_MAINTAINED = 26;                /* 维护中 */
+    CHANNEL_ST_PRESSURE_PAUSE = 29;         /* 负压暂停 */
+    CHANNEL_ST_BYPASS = 30;                 /* 旁路 */
+    CHANNEL_ST_MAX = 99;
+}
+
+/* 电源通道 */
+enum power_channel_st{
+    POWER_CHANNEL_ST_READY = 0;         /* 就绪 */
+    POWER_CHANNEL_ST_RUN = 1;           /* 运行 */
+    POWER_CHANNEL_ST_ABNORMAL = 2;      /* 异常 */
+    POWER_CHANNEL_ST_PAUSE = 3;         /* 暂停 */
+    POWER_CHANNEL_ST_LOCK = 4;          /* 锁定 */
+    POWER_CHANNEL_ST_TERMINATE = 5;     /* 用户终止 */
+    POWER_CHANNEL_ST_OK = 6;            /* 结束OK */
+    POWER_CHANNEL_ADJUSTING = 7;        /* 校准中 */
+    POWER_MAINTAINED = 8;               /* 维护中 */
+    POWER__PRESSURE_PAUSE = 9;          /* 负压暂停 */
+}
+
+/* 通道辅助状态 */
+enum ch_assist_st{
+    CH_ASSIST_ST_NONE = 0;                      /* 无 */
+    CH_ASSIST_ST_DISPLAY_TIME = 1;              /* 闲时记录 */
+    CH_ASSIST_ST_DISPLAY_TIME_OK = 2;           /* 闲时记录OK */
+    CH_ASSIST_ST_DISPLAY_TIME_TERMINATE = 3;    /* 闲时记录终止 */
+    CH_ASSIST_ST_MAX = 4;
+}
+
+/* 读写EEPROM命令类型 */
+enum im_eeprom_type {
+    EEP_RESERVED = 0;           /* 预留值 */
+    EEP_MODEL = 1;              /* 机型 */
+    EEP_CHANNEL = 2;            /* 通道号 */
+    EEP_BARCODE = 3;            /* 条码 */
+    EEP_SAMPLER_TIME = 4;       /* 采样断开时间 */
+    EEP_RECORD_INTERVAL = 5;    /* 数据记录间隔 */
+    EEP_DEVICE_CONFIG = 6;      /* 设备配置 */
+    EEP_CALIBRATION = 7;        /* 校准系数 */
+}
+
+
+/* 校准系数类型 */
+enum im_fator_type {
+    EPP_FT_RESERVED = 0;    /* 预留值 */
+    AV = 1;                 /* 实际值(加载值) */
+    PV = 2;                 /* 测量值 */
+}
+
+/* 校准系数项目 */
+enum im_fator_option {
+    EPP_FO_RESERVED = 0;    /* 预留值 */
+    CV = 1;                 /* 充电电压 */
+    CC = 2;                 /* 充电电流 */
+    DV = 3;                 /* 放电电压 */
+    DC = 4;                 /* 放电电流 */
+    BT = 5;                 /* 电池温度 */
+    DT = 6;                 /* 设备温度(预留) */
+    DCDC_IN = 7;            /* DC_DC输入电压 */
+    DCDC_OUT = 8;           /* DC_DC输出电压 */
+}
+
+/* 预约暂停类型 */
+enum im_appoint_stop_type {
+    appoint_step_stop = 0;  /* 按工步预约暂停 */
+    appoint_loop_stop = 1;  /* 按循环预约暂停 */
+    appoint_time_stop = 2;  /* 按时间预约暂定 */
+}
+
+/* 告警类型 */
+enum im_warn_type {
+    extern_device_warn = 0;         /* 来自外设的外设告警 */
+    extern_device_judge_warn = 1;   /* 来自中位机的外设告警 */
+    channel_warn = 2;               /* 来自下位机的通道告警 */
+    channel_judge_warn = 3;         /* 来自中位机的通道告警 */
+    step_judge_warn = 4;            /* 来自中位机的工步告警 */
+    power_ac_warn = 5;              /* 来自电源的AC故障告警 */
+    security_warn = 6;              /* 来自安防故障告警 */
+}
+
+/* 下位机告警类型 */
+enum lower_machine_warn_type {
+    NO_WARN = 0;                        /* 无告警 */
+    DC_DC_INPUT_OVER_VOLTAGE = 1;       /* DC-DC输入过压 */
+    DC_DC_OUPUT_OVER_VOLTAGE = 2;       /* DC-DC输出过压 */
+    DC_DC_OUPUT_OVER_CURRENT = 3;       /* DC-DC输入过流 */
+    DC_DC_OVER_TEMP = 4;                /* DC-DC过温保护 */
+    DC_DC_INPUT_VOLTAGE_ABNORMAL = 5;   /* DC_DC输入电压异常 */
+    DC_DC_OUTPUT_VOLTAGE_ABNORMAL = 6;  /* DC_DC输出电压异常 */
+    AD_TIMEOUT = 7;                     /* AD通讯超时 */
+    EEPROM_TIMEOUT = 8;                 /* EEPROM通讯超时 */
+    INIT_FAILED = 9;                    /* 初始化失败 */
+    PARALLEL_START_TIMEOUT = 10;        /* 并联启动超时 */
+    PARALLEL_CLOSE_TIMEOUT = 11;        /* 并联关机超时 */
+    PRECHARGE_FAILED = 12;              /* 预充失败 */
+    SAMPLE_LINE_FALL_OFF = 13;          /* 采样线脱落 */
+    PARALLEL_CIRCUIT_FAULT = 14;        /* 并联电路故障 */
+    VOLTAGE_UPPER_LIMIT_GUARD = 15;     /* 电压上限保护 */
+    VOLTAGE_LOWER_LIMIT_GUARD = 16;     /* 电压下限保护 */
+    CURRENT_UPPER_LIMIT_GUARD = 17;     /* 电流上限保护 */
+    CURRENT_LOWER_LIMIT_GUARD = 18;     /* 电流下限保护 */
+    TEMP_UPPER_LIMIT_GUARD = 19;        /* 温度上限保护 */
+    TEMP_LOWER_LIMIT_GUARD = 20;        /* 温度下限保护 */
+    OUTPUT_SHORT_CIRCUIT_GUARD = 21;    /* 输出短路保护 */
+    BATTERY_REVERSAL = 22;              /* 电池反接 */
+    DC_DC_FAN_FAULT = 23;               /* DC_DC风机故障 */
+    BATTERY_GUARD_OR_DROPPED = 24;      /* 电池保护或掉线 */
+}
+
+/* 下位机ARM故障类型 */
+enum lower_machine_arm_fault_type {
+    ARM_NO_FAULT = 0;                           /* 无故障 */
+    LOST_LOCK = 1;                              /* 同步锁相失锁 */
+    LOST_SIGNAL = 2;                            /* 同步信号丢失 */
+    FREQUENCY_ERROR = 3;                        /* 同步信号频率错误 */
+    SIP_DISCONNECT = 4;                         /* SPI通讯断开 */
+    ASSERT_FAILED = 5;                          /* 断言失败 */
+    ACDC_WARNING = 6;                           /* ACDC模块告警 */
+    MAC_CONFLICT = 7;                           /* ARM地址冲突 */
+    START_TIMEOUT = 8;                          /* 启动等待超时 */
+    STOP_TIMEOUT = 9;                           /* 停止等待超时 */
+    ESTOP_PROTECT = 10;                         /* 急停保护 */
+    CAN_FAULT = 11;                             /* 同步CAN故障 */
+    NETWORK_FAULT = 12;                         /* 以太网通讯故障 */
+    CELL_VOL_BOARD_COMM_FAILED = 13;            /* 电芯电压采集板通讯断开 */
+    EAR_VOL_BOARD_COMM_FAILED = 14;             /* 极耳电压采集板通讯断开 */
+    AC_DC_COMM_DISCONNECT = 15;                 /* ACDC通讯断开 */
+    CHANNEL_COMM_FAILED = 32;                   /* 通道通讯断开 */
+    STEP_SETTING_ERROR = 33;                    /* 通道工步设置出错 */
+    CHANNEL_BATTERY_REVERSAL = 34;              /* 通道电池反接 */
+    CHANNEL_BATTERY_GUARD_OR_DROPPED = 35;      /* 通道电池保护或掉线 */
+    CHANNEL_HISTORY_FAULT = 36;                 /* 通道等待清除历史故障 */
+}
+
+/* 下位机通道故障类型 */
+enum lower_machine_channel_fault_type {
+    CHANNEL_NO_FAULT = 0;                       /* 无故障 */
+    Input_Transient_Over_Vol = 1;               /* 输入电压瞬时软过压 */
+    Input1_Transient_Over_Vol = 2;              /* 输入电压1瞬时软过压 */
+    Input2_Transient_Over_Vol = 3;              /* 输入电压2瞬时软过压 */
+    Input3_Transient_Over_Vol = 4;              /* 输入电压3瞬时软过压 */
+    Input4_Transient_Over_Vol = 5;              /* 输入电压4瞬时软过压 */
+    Input_Transient_Under_Vol = 6;              /* 输入电压瞬时软欠压 */
+    Input1_Transient_Under_Vol = 7;             /* 输入电压1瞬时软欠压 */
+    Input2_Transient_Under_Vol = 8;             /* 输入电压2瞬时软欠压 */
+    Input3_Transient_Under_Vol = 9;             /* 输入电压3瞬时软欠压 */
+    Input4_Transient_Under_Vol = 10;            /* 输入电压4瞬时软欠压 */
+    Input_Vol1_Reversal = 11;                   /* 输入电压1反接 */
+    Input_Vol2_Reversal = 12;                   /* 输入电压2反接 */
+    Input_Vol3_Reversal = 13;                   /* 输入电压3反接 */
+    Input_Vol4_Reversal = 14;                   /* 输入电压4反接 */
+    Input_Vol_Sample_Abnormal = 15;             /* 输入电压采样异常 */
+    Input_Vol_Over_Vol  = 16;                   /* 输入电压软过压 */
+    Input_Vol_Reversal = 17;                    /* 输入电压反接 */
+    LCur_P_Transient_Over_Cur = 20;             /* 电感电流P瞬时软过流 */
+    LCur_N_Transient_Over_Cur = 21;             /* 电感电流N瞬时软过流 */
+    Output_Vol_P_Over_Vol = 22;                 /* 输出电压P软过压 */
+    Output_Vol_N_Over_Vol = 23;                 /* 输出电压N软过压 */
+    ADC_Comm_Fault = 24;                        /* ADC通讯故障 */
+    Output_Short_Circuit = 25;                  /* 输出短路 */
+    Vol_Over_Upper_Limit = 26;                  /* 电池电压超过电压上限 */
+    Temp_Over_Upper_Limit = 27;                 /* 电池温度超过温度上限 */
+    Cur_Over_Upper_Limit = 28;                  /* 电池电流超过电流上限 */
+    Vol_Under_Lower_Limit = 29;                 /* 电池电压低于电压下限 */
+    Cur_Under_Lower_Limit = 30;                 /* 电池电流低于电流下限 */
+    Output_Cur_Unbalanced = 31;                 /* 输出电流不均衡 */
+    Output_Transient_Over_Vol = 32;             /* 输出电压瞬时软过压 */
+    Output_Over_Vol = 33;                       /* 输出电压软过压 */
+    Output1_Transient_OverVol = 34;             /* 输出电压1软过压 */
+    Output2_Over_Vol = 35;                      /* 输出电压2软过压 */
+    Output3_Over_Vol = 36;                      /* 输出电压3软过压 */
+    Output4_Over_Vol = 37;                      /* 输出电压4软过压 */
+    Output1_Under_Pressure = 38;                /* 输出电压1负压 */
+    Output2_Under_Pressure = 39;                /* 输出电压2负压 */
+    Output3_Under_Pressure = 40;                /* 输出电压3负压 */
+    Output4_Under_Pressure = 41;                /* 输出电压4负压 */
+    Output_M_Over_Vol = 42;                     /* 输出电压M软过压 */
+    Output_Vol_Over_Vol = 43;                   /* 输出电压过压 */
+    Output_Vol_Sample_Abnormal = 47;            /* 输出电压采样异常 */
+    Auxiliary_Power_Over_Vol = 48;              /* 辅助电源过压 */
+    Auxiliary_Power_Under_Vol = 49;             /* 辅助电源欠压 */
+    Signal_Line_Connect_Abnormal = 50;          /* 信号线连接异常 */
+    Signal_Line_Abnormal = 51;                  /* 信号线异常或散热器过温 */
+    Env_Temp_Over_Temp = 52;                    /* 环境温度过温 */
+    Battery_Temp_Over_Temp = 53;                /* 电池温度过温 */
+    Cooler_Over_Temp = 54;                      /* 散热器过温 */
+    Cooler1_Over_Temp = 55;                     /* 散热器1过温 */
+    Cooler2_Over_Temp = 56;                     /* 散热器2过温 */
+    Cooler3_Over_Temp = 57;                     /* 散热器3过温 */
+    Cooler4_Over_Temp = 58;                     /* 散热器4过温 */
+    Temp_Sample_Abnormal = 59;                  /* 温度采样异常 */
+    Board_Temp_Over_Temp = 60;                  /* 板卡温度过温 */
+    Parallel_Channel_Fault = 61;                /* 并联通道故障 */
+    Parallel_Channel_Cell_Vol_Sample_Abnormal = 62; /* 并联通道电池电压采样异常 */
+    Parallel_Channel_Out_Sync = 63;             /* 并联通道不同步 */
+    Fan_Fault = 64;                             /* 风机故障 */
+    Fan1_Fault = 65;                            /* 风机1故障 */
+    Fan2_Fault = 66;                            /* 风机2故障 */
+    Fan3_Fault = 67;                            /* 风机3故障 */
+    Fan4_Fault = 68;                            /* 风机4故障 */
+    Fan5_Fault = 69;                            /* 风机5故障 */
+    Fan6_Fault = 70;                            /* 风机6故障 */
+    Power_Grid_Over_Vol = 80;                   /* PWM:电网过压 */
+    Power_Grid_Under_Vol = 81;                  /* PWM:电网欠压 */
+    Power_Grid_Over_Freq = 82;                  /* PWM:电网频率过高 */
+    Power_Grid_Under_Freq = 83;                 /* PWM:电网频率过低 */
+    Power_Grid_Over_Cur = 84;                   /* PWM:电网过流 */
+    Power_Grid_Transient_Over_Vol = 85;         /* PWM:电网瞬时软过压 */
+    Power_Grid_Power_Down = 86;                 /* PWM:电网掉电 */
+    Power_Grid_Freq_Detect_Failed = 87;         /* PWM:电网频率检测失败 */
+    Power_Grid_Phase_Detect_Failed = 88;        /* PWM:电网相序检测失败 */
+    Power_Grid_Phase_Unbalanced = 89;           /* PWM:电网三相不平衡 */
+    Power_Grid_Lock_Phase_Failed = 90;          /* PWM:电网锁相失败 */
+    Power_Grid_Phase_Lost_Lock = 91;            /* PWM:电网相位失锁 */
+    Power_Grid_AC_Short_Circuit = 92;           /* PWM:电网交流侧短路 */
+    PWM_Island_Protection = 93;                 /* PWM:孤岛保护 */
+    PWM_LCur_Over_Cur = 94;                     /* PWM:电感电流过流 */
+    PWM_LCur_Overload = 95;                     /* PWM:电感电流过载 */
+    PWM_Soft_Over_Vol = 96;                     /* PWM:PWM软过压 */
+    PWM_Transient_Soft_Over_Vol  = 97;          /* PWM:PWM瞬时软过压 */
+    PWM_Soft_Under_Vol = 98;                    /* PWM:PWM软欠压 */
+    PWM_Hard_Over_Vol = 99;                     /* PWM:PWM硬过压 */
+    PWM_DC_Over_Cur = 100;                      /* PWM:直流电流过流 */
+    PWM_DC_Soft_Over_Cur = 101;                 /* PWM:直流电流瞬时软过流 */
+    PWM_DC_Overload = 102;                      /* PWM:直流电流过载 */
+    PWM_PSB_Hard_Over_Vol = 103;                /* PWM:PSB硬过压 */
+    PWM_PSB_Transient_Soft_Under_Vol = 104;     /* PWM:PSB瞬时软过压 */
+    PWM_PSB_Soft_Under_Vol  = 105;              /* PWM:PSB软欠压 */
+    PWM_PSB_Hard_Over_Cur = 106;                /* PWM:PSB硬过流 */
+    PWM_PSB_Transient_Soft_Over_Cur = 107;      /* PWM:PSB瞬时软过流 */
+    PWM_PSB_Hard_Over_Cur_OrOver_Vol = 108;     /* PWM:PSB硬过流或硬过压 */
+    PWM_Cooler_Over_Temp = 112;                 /* PWM:散热器过温 */
+    PWM_Cooler1_Over_Temp = 113;                /* PWM:散热器1过温 */
+    PWM_Cooler2_Over_Temp = 114;                /* PWM:散热器2过温 */
+    PWM_Cooler3_Over_Temp = 115;                /* PWM:散热器3过温 */
+    PWM_Env_Temp_Over_Tem = 116;                /* PWM:环境温度过温 */
+    PWM_Start_Failed = 117;                     /* PWM:开机启动失败 */
+    PWM_Comm_Disconnect = 118;                  /* PWM:通讯断开 */
+    PWM_WB_Dischare_Failed = 119;               /* PWM:直流母线放电失败 */
+    PWM_Auxiliary_Power_Over_Vol = 120;         /* PWM:辅助电源过压 */
+    PWM_Auxiliary_Power_Under_Vol = 121;        /* PWM:辅助电源欠压 */
+    PWM_DC_Vol_Sample_Abnormal = 122;           /* PWM:直流电压采样异常 */
+    PWM_DC_Cur_Sample_Abnormal= 123;            /* PWM:直流电流采样异常 */
+    PWM_AC_Vol_Sample_Abnormal = 124;           /* PWM:交流电压采样异常 */
+    PWM_AC_Cur_Sample_Abnormal = 125;           /* PWM:交流电流采样异常 */
+    PWM_DSP_Abnormal = 128;                     /* PWM:DSP异常 */
+    PWM_GND_Error = 129;                        /* PWM:接地异常 */
+    PWM_EStop = 130;                            /* PWM:急停 */
+    PWM_IGBT_Over_Cur = 131;                    /* PWM:IGBT过流 */
+    PWM_Status_Invalid = 132;                   /* PWM:状态无效 */
+    PWM_Status_Engine_Invalid = 133;            /* PWM:状态引擎无效 */
+    LCur_P_Hard_Over_Cur = 160;                 /* 电感电流P硬过流 */
+    LCur_N_Hard_Over_Cur = 161;                 /* 电感电流N硬过流 */
+    LCur_Hard_Over_Cur = 162;                   /* 电感电流硬过流 */
+    DC_Cur_Hard_Over_Cur = 163;                 /* 直流电流硬过流 */
+    Single_Cur_Hard_Over_Cur = 164;             /* 单管电流硬过流 */
+    Cur_Hard_Over_Cur = 165;                    /* 电感或单管或直流电流硬过流 */
+    DC_Cur_Transient_Over_Cur = 166;            /* 直流电流瞬时软过流 */
+    LCur_Transient_Over_Cur = 167;              /* 电感电流瞬时软过流 */
+    LCur1_Transient_Over_Cur = 168;             /* 电感电流1瞬时软过流 */
+    LCur2_Transient_Over_Cur = 169;             /* 电感电流2瞬时软过流 */
+    LCur3_Transient_Over_Cur = 170;             /* 电感电流3瞬时软过流 */
+    LCur4_Transient_Over_Cur = 171;             /* 电感电流4瞬时软过流 */
+    Output_Sample_Abnormal = 174;               /* 输出电流采样异常 */
+    LCur_Sample_Abnormal = 175;                 /* 电感电流采样异常 */
+    PWM1_Comm_Alarm = 177;                      /* PWM1模块报警 */
+    PWM2_Comm_Alarm = 178;                      /* PWM2模块报警 */
+    PWM3_Comm_Alarm = 179;                      /* PWM3模块报警 */
+    PWM1_Comm_Disconnect = 180;                 /* PWM1模块通讯断开 */
+    PWM2_Comm_Disconnect = 181;                 /* PWM2模块通讯断开 */
+    PWM3_Comm_Disconnect = 182;                 /* PWM3模块通讯断开 */
+    PWB_Alarm = 183;                            /* PWM模块报警 */
+    PSB_Alarm = 184;                            /* PSB模块报警 */
+    PWM_Module_Comm_Disconnect = 186;           /* PWM模块通讯断开 */
+    PSB_Module_Comm_Disconnect = 187;           /* PSB模块通讯断开 */
+    DSP_Cell_Vol_Sample_Comm_Failed = 188;      /* DSP电芯电压采集板通讯断开 */
+    Cell_Sample_Abnormal = 189;                 /* 电芯采集异常 */
+    Free_Cur_Abnormal = 190;                    /* 闲时电流异常 */
+    Start_Failed = 191;                         /* 启动失败 */
+    Eeprom_Param_Abnormal = 192;                /* EEPROM参数异常 */
+    Battery_Vol_Sample_Abnormal = 193;          /* 电池电压采样异常 */
+    Output_Soft_Start_Abnormal = 194;           /* 输出缓启异常 */
+    IO_Balace_Failed = 195;                     /* IO平衡失败 */
+    LCur1_Sample_Abnormal = 196;                /* 电感电流1采样异常 */
+    LCur2_Sample_Abnormal = 197;                /* 电感电流2采样异常 */
+    LCur3_Sample_Abnormal = 198;                /* 电感电流3采样异常 */
+    LCur4_Sample_Abnormal = 199;                /* 电感电流4采样异常 */
+    DSP_Lost_Lock = 200;                        /* DSP失锁 */
+    Output_Reversal = 201;                      /* 输出反接 */
+    Output_Vol_P_Check_Abnormal = 202;          /* 输出电压P检测异常 */
+    Output_Vol_N_Check_Abnormal = 203;          /* 输出电压N检测异常 */
+    Monomer_Over_Vol = 204;                     /* 单体过压 */
+    Monomer_Under_Vol = 205;                    /* 单体欠压 */
+    Output_PreCharge_Abnormal = 206;            /* 输出预充异常 */
+    Duty_Ratio_Over_Limit = 207;                /* 占空比超限 */
+}
+
+/* 电源工装校准模式 */
+enum adjust_power_mode{
+    AUTO_PARALLEL = 0;      /* 自动并联 */
+    SERIES_MODULE = 1;      /* 极简串联的模组电源 */
+    SERIES_CELL = 2;        /* 极简串联的电芯电源 */
+    CV_SERIES_MODULE = 3;   /* 恒压串联的模组电源 */
+    CV_SERIES_CELL = 4;     /* 恒压串联的电芯电源 */
+}
+
+/* 消息头 */
+message im_cmd_head {
+    reserved 1 to 4;
+    sfixed32 magic = 5;     /* 命令魔数 */
+    sfixed32 seq_num = 6;   /* 序列号 */
+    cmd_type op = 7;        /* 命令 */
+}
+
+/* 授权参数 */
+message im_auth {
+    reserved 1 to 4;
+    auth_type type = 5;             /* 授权类型 */
+    sfixed32 auth_times = 6;        /* 授权次数 */
+    sfixed32 auth_year = 7;         /* 授权到期时间的年 */
+    sfixed32 auth_month = 8;        /* 授权到期时间的月 */
+    sfixed32 auth_day = 9;          /* 授权到期时间的日 */
+    sfixed64 auth_start_time = 10;
+}
+
+/* 按单元设置数据存储 */
+message im_data_store4unit {
+    reserved 1 to 4;
+    bool     enable = 5;                /* true,开启 */
+    repeated sfixed32 unit_num = 6;     /* 库位列表 */
+}
+
+/* 警告日志配置 */
+message im_data_store4alarm {
+    reserved 1 to 4;
+    bool     enable = 5;
+    sfixed32 interval = 6;      /* 时间间隔 */
+    sfixed32 time = 7;          /* 时长 */
+}
+
+
+/* 设备状态 */
+enum device_state {
+    NORMAL = 0;                 /* 正常 */
+    ABNORMAL = 1;               /* 异常 */
+    COMMNUNICATION_ERROR = 2;   /* 连接错误 */
+    CONFIG_ERROR = 3;           /* 配置错误 */
+    DISCONNECTION = 4;          /* 掉线*/
+    LOCKED_ROTOR = 5;           /* 堵转*/
+    TEMPERATURE_ABNORMAL = 6;   /* 温度异常 */
+}
+
+/* 门状态 */
+enum door_state{
+    DOOR_STATE_UNKNOWN = 0;
+    DOOR_STATE_OPEN = 1;            /* 开 */
+    DOOR_STATE_CLOSE = 2;           /* 关 */
+    DOOR_STATE_FOREIGN_BODY = 3;    /* 异物伸入 */
+}
+
+/* 维护门状态 */
+enum accessdoor_state{
+    ACCESSDOOR_DOOR_UNKNOWN = 0;
+    ACCESSDOOR_DOOR_OPEN = 1;       /* 开 */
+    ACCESSDOOR_DOOR_CLOSE = 2;      /* 关 */
+}
+
+/* 托盘状态 */
+enum tray_state{
+    TRAY_STATE_UNKNOWN = 0;
+    TRAY_STATE_NOTINPLACE = 1;      /* 未到位 */
+    TRAY_STATE_ABNORMAL = 6;        /* 检测异常  */
+    TRAY_STATE_PUT_IN_PLACE = 8;    /* 托盘放到位 */
+}
+
+/* 针床脱开状态 */
+enum needlebed_state{
+    NEEDLEBED_STATE_UNKNOWN = 0;
+    NEEDLEBED_STATE_NOTINPLACE = 1;     /* 未到位 */
+    NEEDLEBED_STATE_INPLACE = 2;        /* 到位 */
+
+}
+
+/* 消防门状态 */
+enum firedoor_state{
+    FIREDOOR_STATE_UNKNOWN = 0;
+    FIREDOOR_STATE_OPENING = 1;         /* 开启中 */
+    FIREDOOR_STATE_OPEN = 2;            /* 开启 */
+    FIREDOOR_STATE_CLOSEING = 3;        /* 关闭中 */
+    FIREDOOR_STATE_CLOSE = 4;           /* 关闭 */
+    FIREDOOR_STATE_OPEN_TIMEOUT = 5;    /* 开启超时 */
+    FIREDOOR_STATE_CLOSE_TIMEOUT = 6;   /* 关闭超时 */
+    FIREDOOR_STATE_ABNORMAL = 7;        /* 异常 */
+}
+
+/* 替罪羊状态 */
+enum scapegoat_state{
+    SCAPEGOAT_STATE_UNKNOWN = 0;
+    SCAPEGOAT_STATE_IN_PLACE = 1;           /* 已归位 */
+    SCAPEGOAT_STATE_NOT_IN_PLACE = 2;       /* 未归位 */
+}
+
+
+/* 烟感明细项 */
+message smoke_item {
+    reserved 1 to 4;
+    sfixed32 smoke_id = 5;                  /* 烟感编号 */
+    device_state smoke_state = 6;           /* 烟感状态 */
+}
+
+/* 烟感数据 */
+message smoke_data {
+    reserved 1 to 4;
+    device_state state = 5;                 /* 烟感状态 */
+    repeated smoke_item smoke_item = 6;     /* 烟感明细项 */
+}
+
+/* 储液状态 */
+enum reservoir_state{
+    RESERVOIR_UNKNOWN = 0;
+    RESERVOIR_UNDER = 1;                    /* 未满 */
+    RESERVOIR_ALREADY_FULL = 2;             /* 已满 */
+    RESERVOIR_DISCHARGEING = 3;             /* 排液中 */
+    RESERVOIR_DISCHARGE_ABNORMAL = 4;       /* 排液故障 */
+}
+
+/* CO明细项 */
+message im_co_item{
+    reserved 1 to 4;
+    sfixed32 co_id = 5;                     /* CO编号 */
+    device_state co_state = 6;              /* CO状态 */
+    float solubility = 7;                   /* 溶度 */
+}
+
+/* CO数据 */
+message im_co_data{
+    reserved 1 to 4;
+    device_state state = 5;                 /* CO状态 */
+    repeated im_co_item im_co_item = 6;     /* CO明细项 */
+}
+
+/* 每风机数据 */
+message im_fan_Item {
+    reserved 1 to 4;
+    sfixed32 fan_id = 5;                    /* 风机编号 */
+    device_state fan_state = 6;             /* 风机状态 */
+}
+
+/* 风机数据 */
+message im_fan_data{
+    reserved 1 to 4;
+    device_state state = 6;                 /* 风机状态 */
+    repeated im_fan_Item fan_item = 7;      /* 风机明细项 */
+}
+
+/* 每温度数据 */
+message im_temp_item {
+    reserved 1 to 4;
+    sfixed32 temp_id = 5;                   /* 编号 */
+    float temp_value = 6;                   /* 温度值 */
+    device_state state = 7;                 /* 温度状态 */
+}
+
+/* 温度数据 */
+message env_temp_data{
+    reserved 1 to 4;
+    device_state state = 5;                 /* 温度状态 */
+    repeated im_temp_item temp_detail = 6;  /* 温度明细数据 */
+}
+
+/* 负压动作 */
+enum negativepressure_action{
+    NEGATIVEPRESSURE_ACTION_READY = 0;                  /* 就绪 */
+    NEGATIVEPRESSURE_ACTION_BLOCKTEST_ABNORMAL = 1;     /* 测堵异常 */
+    NEGATIVEPRESSURE_ACTION_LEAKTESTING_ABNORMAL = 2;   /* 测漏异常 */
+    NEGATIVEPRESSURE_ACTION_DISCHARGEING_ABNORMAL = 3;  /* 泄真异常 */
+    NEGATIVEPRESSURE_ACTION_BLOCKTESTING = 4;           /* 测堵中 */
+    NEGATIVEPRESSURE_ACTION_BLOCKTEST_COMPLETE = 5;     /* 测堵完成 */
+    NEGATIVEPRESSURE_ACTION_LEAKTESTING = 6;            /* 测漏中 */
+    NEGATIVEPRESSURE_ACTION_LEAKTESTING_COMPLETE = 7;   /* 测漏完成 */
+    NEGATIVEPRESSURE_ACTION_DISCHARGEING = 8;           /* 泄真空中 */
+    NEGATIVEPRESSURE_ACTION_DISCHARGEING_COMPLETE = 9;  /* 泄真空完成 */
+}
+
+/* 负压操作明细 */
+enum negativepressure_operation_items{
+    NEGATIVEPRESSURE_FAIL_ITEMS_NORMAL = 0;                     /* 正常*/
+    NEGATIVEPRESSURE_FAIL_ITEMS_SET_FAIL = 1;                   /* 设置负压阀失败 */
+    NEGATIVEPRESSURE_FAIL_ITEMS_Suction_Fail = 2;               /* 打开吸真空阀失败 */
+    NEGATIVEPRESSURE_FAIL_ITEMS_Close_Suction_Fail = 3;         /* 关闭吸真空阀失败 */
+    NEGATIVEPRESSURE_FAIL_ITEMS_Open_Breaked_Fail = 4;          /* 打开破真空阀失败 */
+    NEGATIVEPRESSURE_FAIL_ITEMS_Close_Breaked_Fail = 5;         /* 关闭破真空阀失败 */
+    NEGATIVEPRESSURE_FAIL_ITEMS_Res_Read_Fail = 6;              /* 读取负压阀失败 */
+    NEGATIVEPRESSURE_FAIL_ITEMS_Judge_Fail = 7;                 /* 负压值判断失败 */
+    NEGATIVEPRESSURE_FAIL_ITEMS_Judge_Leakage_Rate_Fail = 8;    /* 负压漏率判断失败 */
+}
+
+/* 负压系统数据 */
+message negativepressure_data{
+    reserved 1 to 4;
+    device_state state = 5;                                                     /* 状态 */
+    sfixed32 negativepressure_id = 6;                                           /* 负压编号 */
+    float negativepressure_value = 7;                                           /* 负压数值 */
+    repeated alarm_set_param_data negativepressure_alarm_data = 8;              /* 负压告警数据 */
+    negativepressure_action negativepressure_action = 9;                        /* 负压动作 */
+    negativepressure_operation_items negativepressure_operation_items = 10;     /* 负压操作明细*/
+}
+
+/* 安防参数数据 */
+message alarm_param_data{
+    reserved 1 to 4;
+    sfixed32 param_id = 6;          /* 参数ID */
+    float param_value = 7;          /* 参数值 */
+    string unit_name = 8;           /* 单位名称 */
+    sint64 alarm_time = 9;          /* 告警时间(时间戳) */
+}
+
+/* 安防设置参数数据 */
+message alarm_set_param_data{
+    reserved 1 to 4;
+    string param_name = 6;          /* 参数名 */
+    float param_value = 7;          /* 参数值 */
+}
+
+/*安防告警数据*/
+message serucrity_alarm_data{
+    reserved 1 to 4;
+    string alarm_code = 5;                                      /* 告警代码 V01 T01等等 All 代表所有告警 */
+    repeated alarm_param_data alarm_param_data = 6;             /* 告警参数列表 */
+    repeated alarm_set_param_data alarm_set_param_data = 7;     /* 告警设置参数列表 */
+}
+
+/* 安防复位状态 */
+enum serucrity_reset_state{
+    SERUCRITY_NORMAL = 0;           /* 正常 */
+    SERUCRITY_WAITING_RESET = 1;    /* 等待复位 */
+    SECONDARY_HAS_RESET = 2;        /* 已复位*/
+}
+
+/* 二级安防触发结果状态*/
+enum secondary_security_result_state{
+    SECONDARY_SECURITY_RESULT_STATE_NOT_TRIGGER = 0;        /* 未触发*/
+    SECONDARY_SECURITY_RESULT_STATE_TRIGGER_SUCCESS = 1;    /* 触发成功*/
+    SECONDARY_SECURITY_RESULT_STATE_TRIGGER_FAIL = 2;       /* 触发失败*/
+}
+
+/* 安防组合告警数据 */
+message serucrity_combination_alarm_data{
+    reserved 1 to 4;
+    string rule_name = 5;                                               /* 规则名称列表 */
+    string action_name = 6;                                             /* 执行动作列表 */
+    sint64 alarm_time = 7;                                              /* 告警时间(时间戳) */
+    serucrity_reset_state reset_state = 8;                              /* 安防复位状态 */
+    serucrity_reset_state secondary_reset_state = 9;                    /* 二级安防复位状态 */
+    secondary_security_result_state secondary_security_result = 10;     /* 二级安防触发结果*/
+    sint64 secondary_security_time = 11;                                /* 二级安防触发时间*/
+}
+
+/* PLC状态 */
+enum plc_status{
+    PLC_STATUS_UNKNOWN = 0;
+    PLC_STATUS_NORMAL = 1;                      /* 正常 */
+    PLC_STATUS_ABNORMAL = 2;                    /* 异常 */
+    PLC_STATUS_ESTOP = 4;                       /* 急停 */
+    PLC_STATUS_POWERON = 5;                     /* 初上电 */
+    PLC_STATUS_FIRE_FIGHTING = 6;               /* 收到消防动作 */
+    PLC_STATUS_NOT_RESET = 7;                   /* 未复位  */
+    PLC_STATUS_SINGLE_STEP = 8;                 /* 单步 */
+    PLC_STATUS_COMMNUNICATION_ABNORMAL = 9;     /* 通信异常 */
+}
+
+/* 下位机状态 */
+enum lowercomputer_status{
+    LOWERCOMPUTER_STATUS_UNKNOWN = 0;
+    LOWERCOMPUTER_STATUS_DCDC_ABNORMAL = 1;                 /* 与DCDC通讯异常 */
+    LOWERCOMPUTER_STATUS_CP_MODULE_ABNORMAL = 2;            /* 与恒压模块通讯异常 */
+    LOWERCOMPUTER_STATUS_COLLECT_MODULE_ABNORMA = 3;        /* 与采集模块通讯异常 */
+    LOWERCOMPUTER_STATUS_DCDC_MODULE_IOVER = 4;             /* DCDC电流超限 */
+    LOWERCOMPUTER_STATUS_DCDC_MODULE_IOVERL = 5;            /* 恒压模块电流超限 */
+}
+
+/* 下位机数据 */
+message  lowercomputer_data{
+    reserved 1 to 4;
+    sfixed64 abnormal_time = 5;                         /* 告警时间 */
+    lowercomputer_status lowercomputer_status = 7;      /* 下位机状态 */
+}
+
+/* 库位模式 */
+enum stock_model{
+    STOCK_MODEL_UNKNOWN = 0;
+    STOCK_MODEL_AUTO = 1;           /* 自动 */
+    STOCK_MODEL_MANUAL = 2;         /* 手动 */
+}
+
+/* PLC的提示信息 */
+/*
+一个库位的提示信息用8个字节表示
+提示信息的位域说明
+0.0     库位维护门打开
+0.1     库位液位传感器告警
+0.2     库位库位前门光栅异物遮挡
+0.3     库位旋钮手动模式
+0.4     压床复位中
+0.5     库位风机已打开
+0.6     库位软件工步运行中
+0.7     库位运行字变化、序列号未变化
+1.0     库位压床控制字变化、序列号未变化
+1.1     触摸屏已连接
+1.2     库位堆垛机入料中
+1.3     库位堆垛机出料中
+1.4     库位工装通电中
+*/
+
+/* 库位故障数据 */
+/*
+一个库位的一般故障用8个字节表示
+一般故障的位域说明
+0.0     电源柜门禁打开
+0.1     库位运行中前门光栅异物遮挡
+0.2     库位托盘传感器异常
+0.3     库位压床上升异常
+0.4     库位压床未受控时异常脱开
+0.5     库位压床下降异常
+0.6     库位消防门传感器异常
+0.7     库位消防门上升异常
+1.0     库位消防门下降异常
+1.1     库位运行中旋钮手动模式
+1.2     压床未复位
+1.3     PLC扩展模块与程序配置不符
+*/
+
+/*
+一个库位的安全故障用8个字节表示
+安全故障的位域说明
+0.0     库位运行中维护门开合检测异常
+0.1     触摸屏急停
+0.2     库位排液后液位传感器仍告警
+0.3     库位运行中库位门异物检测1异常
+0.4     库位运行中库位门异物检测2异常
+0.5     急停触发
+0.6     气源压力异常
+0.7     库位库位门开合检测异常
+1.0     库位托盘到位检测异常
+1.1     库位托盘提升到位检测异常
+1.2     库位托盘放反告警
+1.3     库位托盘歪斜告警
+1.4     库位PLC收到安防脱压床信号
+1.5     库位PLC收到安防脱停风机信号
+1.6     库位PLC收到安防关消防门信号
+1.7     中位机心跳丢失
+2.0     上位机反馈1230已喷淋信号
+2.1     IO反馈1230通过已喷淋信号
+2.2     交互柜心跳丢失
+2.3     未检测到替罪羊
+2.4     气源压力抖动
+2.5     托盘信号抖动
+*/
+message plc_failure_data{
+    reserved 1 to 4;
+    sfixed64 plc_message = 5;                          /* 提示信息 */
+    sfixed64 general_failure = 6;                      /* 一般故障 */
+    sfixed64 security_failure = 7;                     /* 安全故障 */
+}
+
+/* 安防运行状态*/
+enum security_runing_state{
+    SECURITY_STATE_ENABLE = 0;                      /* 启用*/
+    SECURITY_STATE_DISABLE = 1;                     /* 禁用*/
+    SECURITY_STATE_DISABLESOME = 2;                 /* 部分禁用*/
+    SECURITY_STATE_NORESET =3;                      /* 组合未复位，非禁用下*/
+}
+
+/* 电动球阀状态 */
+enum electric_ball_valve_state{
+    ELECTRIC_BALL_VALVE_STATE_UNKNOWN = 0;
+    ELECTRIC_BALL_VALVE_STATE_CLOSE = 1;            /* 关闭 */
+    ELECTRIC_BALL_VALVE_STATE_OPEN = 2;             /* 打开 */
+}
+
+/* 每库位安防数据 */
+message im_stock_securityInfo{
+    reserved 1 to 4;
+    sfixed32 stock_no = 5;                                                  /* 库位号 */
+    door_state stockdoor_state = 6;                                         /* 库位门状态 */
+    tray_state tray_state = 7;                                              /* 托盘状态 */
+    accessdoor_state accessdoor_state = 8;                                  /* 维护门状态  */
+    firedoor_state firedoor_state = 9;                                      /* 消防门状态 */
+    needlebed_state needlebed_out_state = 10;                               /* 针床脱开状态 */
+    needlebed_state needlebed_press_state = 11;                             /* 针床压合状态 */
+    scapegoat_state scapegoat_state = 12;                                   /* 替罪羊归位状态 */
+    smoke_data smoke_data = 13;                                             /* 烟感数据 */
+    reservoir_state reservoir_state = 14;                                   /* 储液罐状态 */
+    im_co_data co_data = 15;                                                /* CO数据 */
+    im_fan_data security_fan_data = 16;                                     /* 安防风机数据 */
+    im_fan_data power_fan_data = 17;                                        /* 电源风机数据 */
+    im_fan_data cabletray_fan_data = 18;                                    /* 桥架风机数据 */
+    env_temp_data env_temp_data = 19;                                       /* 环境温度数据 */
+    env_temp_data power_fan_temp_data = 20;                                 /* 电源风机温度数据 */
+    negativepressure_data negativepressure_data = 21;                       /* 负压数据 */
+    plc_status plc_status = 22;                                             /* PLC状态 */
+    repeated lowercomputer_data lowercomputer_data = 23;                    /* 下位机状态数据 */
+    stock_model stock_model = 24;                                           /* 库位模式 */
+    repeated serucrity_alarm_data serucrity_alarm_data = 25;                /* 安防告警数据列表 */
+    repeated serucrity_combination_alarm_data combination_alarm_data= 26;   /* 安防组合条件告警数据列表 */
+    plc_failure_data plc_failure_data = 27;                                 /* PLC的库位故障数据 */
+    stock_state stock_state = 28;                                           /* 库位状态(暂时仅中位机端使用)*/
+    security_runing_state security_runing_state = 29;                       /* 安防运行状态*/
+    electric_ball_valve_state electric_ball_valve_state = 30;               /* 电动球阀状态*/
+    sfixed64 security_message = 31;                                         /* 安防异常提示(二级安防)*/
+    electric_ball_valve_state suction_vacuum_valve_state = 32;              /* 吸真空阀（气控隔膜阀）状态*/
+    electric_ball_valve_state vacuum_breaker_valve_state = 33;              /* 破真空阀状态*/
+}
+
+/* 安防数据 */
+message im_security_data {
+    reserved 1 to 4;
+    im_cmd_head head = 5;                                       /* 消息头 */
+    repeated im_stock_securityInfo stock_securityInfo  = 6;     /* 库位安防数据列表 */
+}
+
+/* 设备升级状态 */
+enum deviece_update_status{
+    UPDATE_STATUS_SUCCESS = 0;           /* 成功 */
+    UPDATE_STATUS_FAIL = 1;              /* 失败 */
+    UPDATE_STATUS_RUNNING = 2;           /* 升级中 */
+    UPDATE_STATUS_UNKNOWN = 100;         /* 未知状态 */
+}
+
+/* 设备升级错误码 */
+enum deviece_update_errorcode{
+    UPDATE_RESULT_UNKNOWN = 0;           /* 未知原因 */
+    UPDATE_RESULT_FILECHECK_ERROR = 1;   /* 文件校验错误 */
+    UPDATE_RESULT_LINK_OVERTIME = 2;     /* 下位机超时 */
+}
+
+/* 设备更新类型 */
+enum device_upgrade_type{
+    DEVICE_UPDATE_UNKNOWN = 0;          /* 未知状态 */
+    DEVICE_UPDATE_END = 1;              /* 升级结束 */
+    DEVICE_UPDATE_RUN = 2;              /* 设备升级过程——中位机完成一个下位机的升级后，进行升级状态上报 */
+    DEVICE_UPDATE_HEARTBEAT = 3;        /* 升级心跳 */
+    DEVICE_GET_VERSION = 4;             /* 获取下位版本*/
+}
+
+/* 每台设备升级数据 */
+message im_device_update_info{
+    reserved 1 to 4;
+    string update_id = 5;                                 /* 升级项ID */
+    sfixed32 device_type = 6;                             /* 设备类型 */
+    string device_addr = 7;                               /* 设备IP */
+    sfixed32 device_port = 8;                             /* 设备端口 */
+    deviece_update_status update_status = 9;              /* 升级状态 */
+    deviece_update_errorcode update_errorcode = 10;       /* 升级结果 */
+}
+/* 透传应答数据 */
+message im_device_passthrough_response {
+    reserved 1 to 4;
+    string address = 5;                     /* 地址 */
+    string port = 6;                        /* 端口 */
+    string content = 7;                     /* 内容 */
+    string channel_id = 8;                  /* 通道ID */
+    sfixed32 result = 9;                    /* 操作结果 */
+}
+/* 设备升级数据 */
+message im_device_upgrade_data {
+    reserved 1 to 4;
+    im_cmd_head head = 5;
+    device_upgrade_type device_upgrade_type = 6;                    /* 设备更新类型 */
+    repeated  im_device_update_info update_data = 7;                /* 升级情况数据 */
+    im_device_passthrough_response passthrough_data = 8;            /* 透传数据 */
+}
+
+
+/* 设备升级完成 */
+message im_device_upgrad_notify {
+    reserved 1 to 4;
+    device_upgrade_type device_upgrade_type = 5;                  /* 设备更新类型 */
+}
+/* 网卡相关 */
+message im_netcard_param {
+    reserved 1 to 4;
+    bool mobile = 5;                /* 移动是否开启 */
+    bool dhcp = 6;                  /* 是否开启DHCP */
+    sfixed32 ipaddr = 7;            /* ip地址 */
+    sfixed32 netmsk = 8;            /* 掩码 */
+    sfixed32 gateway = 9;           /* 网关 */
+    string mac_addr = 10;           /* 网卡的MAC地址*/
+    sfixed32 dns1 = 11;             /* 首选DNS */
+    sfixed32 dns2 = 12;             /* 备选DNS */
+    sfixed32 cmd_port = 13;         /* cmd端口 */
+    sfixed32 ui_port = 14;          /* UI端口 */
+    sfixed32 boardcast_port = 15;   /* 广播端口 */
+}
+
+/* 通道操作结果 */
+message im_master_channel_ret {
+    reserved 1 to 4;
+    sfixed32 channel_id = 5;        /* 通道ID */
+    sfixed32 result = 6;            /* 操作结果 */
+}
+
+/* 工步跳转 */
+message im_step_jump {
+    reserved 1 to 4;
+    sfixed32 step = 5;                  /* 跳转的工步序号 */
+    repeated sfixed32 channels = 6;     /* 要工步跳转的通道 */
+}
+
+/* 工步跳转，操作结果*/
+message im_channel_continue_ret {
+    reserved 1 to 4;
+    sfixed32 step = 5;                                  /* 跳转的工步序号 */
+    repeated im_master_channel_ret channel_ret = 6;     /* 跳转失败的通道 */
+}
+
+/* IP通道禁用启用, 操作结果 */
+message im_channel_enable_byip_result {
+    reserved 1 to 4;
+    sfixed32 ipaddr = 5;    /* ipaddr */
+    sfixed32 result = 6;    /* 失败原因 */
+}
+
+/* 预约暂停 */
+message im_channel_appoint_stop {
+    reserved 1 to 4;
+    bool is_set = 5;                        /* false 为取消，true为设置 */
+    im_appoint_stop_type stop_type = 6;     /* 预约时间暂定，msec有效; 预约工步暂停， step有效; 预约循环暂停，loop_times和step有效 */
+    bool invalid4curstep = 7;               /* 是否对当前工步有效 */
+    sfixed32 step = 8;                      /* 工步号 */
+    sfixed32 loop_times = 9;                /* 循环次数 */
+    sfixed64 msec = 10;                     /* 暂停时间或超时时间，1970年1月1日到当前的毫秒数 */
+}
+
+/* 按库位停止安防 */
+message im_security_stop_byStock {
+    reserved 1 to 4;
+    sfixed32 stock_id = 5;      /* 库ID */
+    bool success = 6;           /* 成功与否 */
+}
+
+/* 通道测试参数 */
+message im_channel_test {
+    reserved 1 to 4;
+    sfixed32 channel_id = 5;        /* 通道号 */
+    string step_file_path = 6;      /* 工步文件路径 */
+}
+
+/* 清除通道告警参数 */
+message im_channel_clear_warn {
+    reserved 1 to 4;
+    sint32 channel_id = 5;                  /* 通道号 */
+    repeated im_warn_type warn_type = 6;    /* 告警类型 */
+}
+
+/* 清除安防告警参数 */
+message im_security_clear_warn {
+    reserved 1 to 4;
+    sfixed32 stock_no = 5;                  /* 库位号 为0代表所有库位*/
+    string  alarm_code = 6;                 /* 告警代码 V01 T01等等 All 代表所有告警 */
+}
+
+/* 闲时保护参数 */
+message im_display_time_protection {
+    reserved 1 to 4;
+    bool enable = 5;                        /* true，开启 */
+    sfixed32 sampling_interval = 6;         /* 采样间隔，单位ms */
+    sfixed32 record_time = 7;               /* 记录时间，单位ms */
+    bool volt_upper_limit_protection = 8;   /* true，开启，电压上限保护（整柜急停） */
+    bool volt_lower_limit_protection = 9;   /* true，开启，电压下限保护（整柜急停） */
+}
+
+/* 安防传输模式 */
+enum security_transfer_model{
+    ONLY_STATE_CHANGE = 0;  /* 仅状态变化 */
+    REAL_TIME = 1;          /* 实时 */
+}
+
+/* 程序升级参数 */
+message im_soft_update {
+    reserved 1 to 4;
+    string passwd = 5;                     /* 密码 */
+    string update_file_path = 6;           /* 升级程序文件路径 */
+}
+
+/* 下位机升级参数 */
+message im_device_update {
+    reserved 1 to 4;
+    string check = 5;                      /* 校验 */
+    string update_file_path = 6;           /* 升级程序文件相对路径+完整文件名 */
+}
+
+/* 透传参数 */
+message im_device_passthrough {
+    reserved 1 to 4;
+    string address = 5;                     /* 地址 */
+    string port = 6;                        /* 端口 */
+    string content = 7;                     /* 透传内容 */
+    sfixed32 im_communication_protocol = 8; /* 通讯协议类型，0-TCP|1-UDP */
+    string channel_id = 9;                  /* 通道号 */
+}
+
+/* 命令下发参数 */
+message im_cmd_request {
+    reserved 1 to 4;
+    im_cmd_head cmd_head = 5;
+    repeated sfixed32 chnl_nodes = 6;                               /* 通道相关指令参数 */
+    repeated im_channel_test chnl_test_nodes = 7;                   /* 通道测试指令参数 */
+    repeated sfixed32 step_nums = 8;                                /* 工步相关指令参数 */
+    im_soft_update update = 9;                                      /* 升级程序指令参数 */
+    sysconf_update_type type = 10;                                  /* 更新系统配置参数 */
+    sfixed64 time_set_msec = 11;                                    /* 设置系统时间参数 */
+    im_auth auth = 12;                                              /* 授权相关参数 */
+    repeated sfixed32 ipaddr_nodes = 13;                            /* 根据IP操作的参数 */
+    im_data_store4unit unit_data = 14;                              /* 单元数据存储设置 */
+    im_data_store4alarm alarm_data = 15;                            /* 告警数据配置 */
+    bool enable = 16;                                               /* 只有简单的开启和关闭采取这个参数,如32VT采集，声光报警，安防开关等*/
+    repeated sfixed32 security_stop = 17;                           /* 设置要停安防的库位ID，可能有多个 */
+    im_step_jump step_jump = 18;                                    /* 工步跳转参数 */
+    im_channel_appoint_stop chnl_appoint = 19;                      /* 通道预约暂停参数 */
+    repeated im_channel_clear_warn warn_data = 20;                  /* 清除通道告警参数 */
+    security_transfer_model transfer_model = 21;                    /* 安防传输模式 */
+    im_security_clear_warn security_clear_warn = 22;                /* 清除安防告警 */
+    repeated im_display_time_protection dt_protection_data = 23;    /* 闲时保护参数 */
+    sint32  stock_no = 24;                                          /* 安防执行复位/测堵测漏库位号/脱开压床的库位号/工装要禁用的库位  */
+    execute_serucrity_result serucrity_result = 25;                 /* 安防执行结果反馈 */
+    im_device_update device_update = 26;                            /* 下位机升级包参数 */
+    im_device_passthrough device_passthrough = 27;                  /* 下位机透传参数 */
+    stock_state stock_state = 28;                                   /* 库位状态，当切为维护时不触发安防 */
+    workjust_type workjust_type = 29;                               /* 工装类型 */
+    string disable_security_code = 30;                              /* 禁用安防代码 V09,V11... */
+    adjust_power_mode adjust_power_mode = 31;                       /* 工装校准模式 */
+}
+
+/* 工装类型 */
+enum workjust_type{
+    WORKJUST_TYPE_UNKNOWN = 0;                                      /* 未知 */
+    WORKJUST_TYPE_TEMPERATURE = 1;                                  /* 温度工装 */
+    WORKJUST_TYPE_LINESEQUENCE = 2;                                 /* 线序工装 */
+    WORKJUST_TYPE_ACCURACY = 3;                                     /* 精度工装 */
+    WORKJUST_TYPE_LINESEQUENCELEAKDETECTION = 4;                    /* 线序测漏工装 */
+    WORKJUST_TYPE_POWERLEAKDETECTION = 5;                           /* 测漏工装（电源） */
+    WORKJUST_TYPE_LOCATEFS = 31;                                    /* 化成定位工装 */
+    WORKJUST_TYPE_UnplugNozzle = 32;                                /* 拔吸嘴工装 */
+    WORKJUST_TYPE_PlugNozzle = 33;                                  /* 插吸嘴工装 */
+    WORKJUST_TYPE_NegativePressureFlow = 34;                        /* 负压流量工装 */
+    WORKJUST_TYPE_CleanNegativePressureCup = 35;                    /* 清洗负压杯工装 */
+    WORKJUST_TYPE_LocateGs = 36;                                    /* 容量定位工装 */
+    WORKJUST_TYPE_LeakDetection = 37;                               /* 测漏工装 */
+}
+
+/* 库位状态*/
+enum stock_state{
+    STOCK_STATE_DISABLE = 0;        /* 禁用*/
+    STOCK_STATE_AUTO = 1;           /* 自动*/
+    STOCK_STATE_MAINTAINED = 2;     /* 维护*/
+}
+
+/* 执行结果 */
+enum execute_result{
+    SUCCESS = 0;    /* 成功 */
+    FAIL = 1;       /* 失败 */
+    CANCEL = 2;     /* 用户取消 */
+}
+
+/* 安防执行结果反馈 */
+message execute_serucrity_result {
+    reserved 1 to 4;
+    sint32  stock_no = 5;                   /* 库位号 */
+    execute_result execute_result = 6;      /* 执行结果 */
+}
+
+/* 命令返回参数 */
+message im_cmd_response {
+    reserved 1 to 4;
+    im_cmd_head cmd_head = 5;
+    cmd_result result = 6;
+    repeated im_netcard_param netcard_nodes = 7;
+    string im_version = 8;
+    sysconf_update_type type = 9;
+    im_auth auth_info = 10;
+    repeated im_master_channel_ret chnl_ret_nodes = 11;
+    im_channel_continue_ret step_op = 12;                       /* 工步启动、跳转等操作结果 */
+    repeated im_channel_enable_byip_result byip_nodes = 13;
+    sfixed32 self_check_result = 14;
+    repeated im_security_stop_byStock security_stop_ret = 15;
+}
+
+/* 告警信息 */
+message im_chnnel_warn {
+    reserved     1 to 4;
+    im_warn_type warn_type = 5;     /* 告警类型 */
+    sint32       warn_src_id = 6;   /* 告警产生的通道ID或外设ID */
+    sint64       warn_code = 7;     /* 告警码 */
+    sint64       warn_time = 8;     /* 发生告警的时间 */
+}
+
+/* 外部变量 */
+message im_extern_data {
+    reserved 1 to 4;
+    string   alias_name = 5;    /* 变量别名 */
+    string   unit = 6;          /* 变量单位 */
+    string   key_name = 7;      /* 变量名 */
+    sfixed32 dev_type = 8;      /* 设备类型 */
+    sfixed32 dev_index = 9;     /* 设备索引 */
+    float    value = 10;        /* 变量值 */
+}
+
+/* 每个主通道UI上报的数据 */
+message im_channel_param {
+    reserved 1 to 4;
+    sint32 channel_id = 5;                          /* 主通道号 */
+    channel_st work_state = 6;                      /* 主通道工作状态 */
+    power_channel_st power_state = 7;               /* 电源通道工作状态 */
+    ch_assist_st assist_state = 8;                  /* 辅助状态（闲时记录） */
+    repeated im_chnnel_warn im_chnl_warn = 9;       /* 告警 */
+    string   loop_num = 10;                         /* 循环号 */
+    sint32   step_num = 11;                         /* 工步序号 */
+    string   step_name = 12;                        /* 工步 */
+    sfixed64 absolute_time = 13;                    /* 绝对时间（当前时间，时间戳）:1970年1月1日到当前的毫秒数 */
+    sfixed64 relative_time = 14;                    /* 相对时间:毫秒数，不包括暂停 */
+    repeated im_cell_param cell = 15;               /* 电芯数据 */
+    float    set_voltage = 16;                      /* 设定电压 */
+    float    set_current = 17;                      /* 设定电流  */
+    float    set_power = 18;                        /* 设定功率 */
+    float    actual_current = 19;                   /* 实际电流 */
+    double   capacity = 20;                         /* 容量 */
+    float    voltage_total = 21;                    /* 总压 */
+    float    ear_voltage = 22;                      /* 极耳电压 */
+    float    port_voltage = 23;                     /* 端口电压 */
+    float    aux_tmp_max = 24;                      /* 最大辅助温度 */
+    float    aux_tmp_min = 25;                      /* 最小辅助温度 */
+    float    aux_voltage_diff = 26;                 /* 辅助压差 */
+    float    aux_tmp_diff = 27;                     /* 辅助温差 */
+    float    aux_voltage_total = 28;                /* 辅助总压 */
+    float    negative_pressure = 29;                /* 负压值 */
+    repeated im_extern_data extern_data = 30;       /* 外设数据 */
+    float  external_pressure = 31;                  /* 外压（电芯夹具压力） */
+}
+
+/* 每个电芯通道UI上报的数据 */
+message im_cell_param {
+    reserved 1 to 4;
+    sint32   cell_id = 5;                           /* 电芯号：全局唯一Id */
+    float    actual_voltage = 6;                    /* 实际电压 */
+    float    actual_power = 7;                      /* 实际功率 */
+    float    temperature = 8;                       /* 温度 */
+    double   energy = 9;                            /* 能量 */
+    float    ear_voltage = 10;                      /* 极耳电压 */
+    float    port_voltage = 11;                     /* 端口电压 */
+    repeated im_extern_data extern_data = 12;       /* 外设数据 */
+}
+
+/* UI上报数据 */
+message im_ui_data {
+    reserved 1 to 4;
+    im_cmd_head head = 5;
+    repeated im_channel_param  channel = 6;         /* 主通道个数及相关值 */
+}
+
+message im_ui_data_response {
+    reserved 1 to 4;
+    sfixed32 result = 5;
+}
+
+/* 通道校准加载参数 */
+message im_ajust_request {
+    reserved 1 to 4;
+    sfixed32 channel_id = 5;                /* 通道ID */
+    sfixed32 ajust_type = 6;                /* 参数类型 关闭:0 充电:1 电芯放电:2 dcdc:3 极耳充电:4 清除故障:5 开启数据透传6: 关闭数据透传7: */
+    float    load_voltage = 7;              /* 加载电压 0.1mV*/
+    float    load_current = 8;              /* 加载电流 0.1mA*/
+    sfixed32 relay_time = 9;                /* 加载延时时间 ms */
+    adjust_power_mode power_mode = 10;      /* 电源工装校准模式 */
+}
+
+/* 校准加载命令返回参数 */
+message im_ajust_response {
+    reserved 1 to 4;
+    sfixed32 channel_id = 5;            /* 通道ID */
+    sfixed32 ajust_type = 6;            /* 参数类型 关闭:0 充电:1 电芯放电:2 dcdc:3 极耳充电:4 清除故障:5 开启数据透传6: 关闭数据透传7: */
+    cmd_result result = 7;
+    adjust_power_mode power_mode = 8;   /* 电源工装校准模式 */
+}
+
+/* 通道调试查询参数 */
+message im_debug_request {
+    reserved 1 to 4;
+    sfixed32 channel_id = 5;            /* 通道ID */
+    sfixed32 read_type = 6;             /* 查询类型 常规查询:1,电芯温度:2,电芯温度:3*/
+    adjust_power_mode power_mode = 7;   /* 电源工装校准模式 */
+}
+
+/* 通道调试查询返回参数 */
+message im_debug_response {
+    reserved 1 to 4;
+    sfixed32 channel_id = 5;                                    /* 通道ID */
+    sfixed32 read_type = 6;                                     /* 查询类型 常规查询:1,电芯温度:2,电芯温度:3*/
+    cmd_result result = 7;                                      /* 执行结果 */
+    sfixed32 vnum = 8;                                          /* 电压个数 */
+    sfixed32 inum = 9;                                          /* 电流个数 */
+    sfixed32 tnum = 10;                                         /* 温度个数 */
+    repeated float voltages = 11;                               /* 电压数组 */
+    repeated float currents = 12;                               /* 电流数组 */
+    repeated float temperatures = 13;                           /* 温度数组 */
+    float dc_dc_input_voltage = 14;                             /* DC-DC输入电压 */
+    float dc_dc_output_voltage = 15;                            /* DC-DC输出电压 */
+    float dc_dc_temperature= 16;                                /* DC-DC温度 */
+    adjust_power_mode power_mode = 17;                          /* 电源工装校准模式 */
+    lower_machine_warn_type low_warm_type = 18;                 /* 下位机告警类型 */
+    lower_machine_channel_fault_type channel_fault_type = 19;   /* 下位机通道故障类型 */
+    lower_machine_arm_fault_type arm_fault_type = 20;           /* 下位机arm故障类型 */
+}
+
+/* 读写EEPROM参数 */
+message im_eeprom_request {
+    reserved 1 to 4;
+    sfixed32 channel_id = 5;                /* 通道号 */
+    im_eeprom_type eeprom_type = 6;         /* 读写EEPROM相关参数类型 */
+    im_fator_type fator_type = 7;           /* 校准系数类型 */
+    im_fator_option fator_option = 8;       /* 校准系数项目 */
+    repeated float k_fators = 9;            /* 5 对因子 - K 因子（斜率因子）*/
+    repeated float b_fators = 10;           /* 5 对因子 - B 因子（截距因子）*/
+    adjust_power_mode power_mode = 11;      /* 电源工装校准模式 */
+}
+
+/* 读EEPROM返回参数 */
+message im_eeprom_read_response {
+    reserved 1 to 4;
+    sfixed32 channel_id = 5;                /* 通道号 */
+    im_eeprom_type eeprom_type = 6;         /* EEPROM相关参数类型 */
+    cmd_result result = 7;
+    im_fator_type fator_type = 8;           /* 校准系数类型 */
+    im_fator_option fator_option = 9;       /* 校准系数项目 */
+    repeated float k_fators = 10;           /* 5 对因子 - K 因子（斜率因子）*/
+    repeated float b_fators = 11;           /* 5 对因子 - B 因子（截距因子）*/
+    sfixed32 v_max = 12;                    /*  机型信息，Vmax（单位：1V） */
+    sfixed32 i_max = 13;                    /*  机型信息，Imax（单位：1A） */
+    sfixed32 p_max = 14;                    /*  机型信息，Pmax（单位：1W） */
+    adjust_power_mode power_mode = 15;      /* 电源工装校准模式 */
+}
+
+/* 写EEPROM返回参数 */
+message im_eeprom_write_response {
+    reserved 1 to 4;
+    sfixed32 channel_id = 5;                /* 通道号 */
+    im_eeprom_type eeprom_type = 6;         /* EEPROM相关参数类型 */
+    adjust_power_mode power_mode = 7;       /* 电源工装校准模式 */
+    cmd_result result = 8;
+}
+
+/* 负压阀命令类型 */
+enum negative_pressure_cmd_type{
+    NEGATIVE_PRESSURE_CMD_TYPE_START = 0;             /* 负压阀开始测试 */
+    NEGATIVE_PRESSURE_CMD_TYPE_STOP = 1;              /* 负压阀停止测试 */
+    NEGATIVE_PRESSURE_CMD_TYPE_READ_TEST_RES = 2;     /* 读取负压阀测试结果 */
+    NEGATIVE_PRESSURE_CMD_TYPE_OPEN = 3;              /* 打开负压阀 */
+    NEGATIVE_PRESSURE_CMD_TYPE_CLOSE = 4;             /* 关闭负压阀 */
+    NEGATIVE_PRESSURE_CMD_TYPE_READ = 5;              /* 读取负压值 */
+    NEGATIVE_PRESSURE_CMD_TYPE_SET = 6;               /* 设置负压值 */
+    NEGATIVE_PRESSURE_CMD_TYPE_DECOMPRESSION = 7;     /* 泄压 */
+}
+
+/* 负压阀操作结果值 */
+enum negative_pressure_op_res{
+    NEGATIVE_PRESSURE_OP_RES_SUCC = 0;                      /* 成功 */
+    NEGATIVE_PRESSURE_OP_RES_SET_FAIL = 1;                  /* 设置负压阀失败 */
+    NEGATIVE_PRESSURE_OP_RES_OPEN_SUCTION_FAIL = 2;         /* 打开负压吸真空阀失败 */
+    NEGATIVE_PRESSURE_OP_RES_CLOSE_SUCTION_FAIL = 3;        /* 关闭负压吸真空阀失败 */
+    NEGATIVE_PRESSURE_OP_RES_OPEN_BREAKED_FAIL = 4;         /* 打开负压破真空阀失败 */
+    NEGATIVE_PRESSURE_OP_RES_CLOSE_BREAKED_FAIL = 5;        /* 关闭负压破真空阀失败 */
+    NEGATIVE_PRESSURE_OP_RES_READ_FAIL = 6;                 /* 读取负压值失败 */
+    NEGATIVE_PRESSURE_OP_RES_TESTING = 7;                   /* 测试中 */
+    NEGATIVE_PRESSURE_OP_RES_TEST_FAIL = 8;                 /* 测试失败 */
+    NEGATIVE_PRESSURE_OP_RES_LEAKAGE = 9;                   /* 负压阀泄漏 */
+    NEGATIVE_PRESSURE_OP_RES_TIMEOUT = 10;                  /* 通信超时 */
+    NEGATIVE_PRESSURE_OP_RES_JUDGE_FAIL = 11;               /* 负压值判断失败 */
+    NEGATIVE_PRESSURE_OP_RES_JUDGE_LEAKAGE_RATE_FAIL = 12;  /* 负压漏率判断失败 */
+    NEGATIVE_PRESSURE_OP_RES_PLUGGING = 13;                 /* 测堵中 */
+    NEGATIVE_PRESSURE_OP_RES_LEAKAGING = 14;                /* 测漏中 */
+    NEGATIVE_PRESSURE_OP_RES_DECOMPRESSING = 15;            /* 泄压中 */
+    NEGATIVE_PRESSURE_OP_RES_DECOMPRESSION_FAIL = 16;       /* 泄压失败 */
+    NEGATIVE_PRESSURE_OP_RES_CMD_INVALID = 17;              /* 命令无效 */
+    NEGATIVE_PRESSURE_OP_RES_CONFIG_FILE_NOT_EXIST = 18;    /* 负压配置文件不存在 */
+}
+
+/* 负压真空阀类型 */
+enum negative_pressure_vacuum_valve_type{
+    NEGATIVE_PRESSURE_VACUUM_VALVE_TYPE_SUCTION = 0;  /* 吸真空阀 */
+    NEGATIVE_PRESSURE_VACUUM_VALVE_TYPE_BREAKED = 1;  /* 破真空阀 */
+}
+
+/* 负压阀参数 */
+message negative_pressure_param {
+    reserved 1 to 4;
+    float k_negative_pressure = 5;                      /* 设置的负压值，单位Kpa */
+    float k_negative_pressure_limit = 6;                /* 触发负压阀关闭的门限值 */
+    float k_negative_pressure_rate = 7;                 /* 负压值下降速率，单位Kpa/Min*/
+    sfixed32 k_wait_seconds = 8;                        /* 负压阀稳定等待时间，单位秒 */
+    sfixed32 k_negative_pressure_timeout_seconds = 9;   /* 抽负压超时时间，指定时间后未达到设定的负压值则为抽负压失败，单位秒 */
+    sfixed32 k_leakage_jugge_seconds = 10;              /* 漏率判断时间，单位秒 */
+}
+
+/* 负压阀请求 */
+message im_negative_pressure_request {
+    reserved 1 to 4;
+    sfixed32 stock_no = 5;                              /* 库位号 */
+    negative_pressure_cmd_type cmd_type = 6;            /* 命令类型 */
+    negative_pressure_param cmd_param = 7;              /* 命令参数 */
+    negative_pressure_vacuum_valve_type valve_type = 8; /* 负压真空阀类型 */
+}
+
+/* 负压阀返回参数 */
+message im_negative_pressure_response {
+    reserved 1 to 4;
+    sfixed32 stock_no = 5;                                      /* 库位号 */
+    negative_pressure_cmd_type cmd_type = 6;                    /* 命令类型 */
+    float k_negative_pressure = 7;                              /* 负压值，单位Kpa */
+    cmd_result result = 8;
+    negative_pressure_op_res op_res = 9;                        /* 负压阀操作结果 */
+    float leakage_rate = 10;                                    /* 测漏漏率 */
+    float vacuum_neg_pressure = 11;                             /* 测漏抽真空值，单位Kpa  */
+    float steady_neg_pressure = 12;                             /* 测漏稳压前负压值，单位Kpa  */
+    float first_neg_pressure = 13;                              /* 第一个负压值/测漏稳压后负压值，单位Kpa  */
+    float second_neg_pressure = 14;                             /* 第二个负压值/测漏保压后负压值，单位Kpa  */
+}
+
+/* 下位机芯片类型 */
+enum version_query_chip_type{
+    VERSION_QUERY_CHIP_TYPE_UNKNOWN = 0;                        /* 未知 */
+    VERSION_QUERY_CHIP_TYPE_ARM = 1;                            /* ARM */
+    VERSION_QUERY_CHIP_TYPE_DSP = 2;                            /* DSP */
+}
+
+/* 下位机查询类型 */
+enum version_query_type{
+    VERSION_QUERY_TYPE_UNKNOWN = 0;                             /* 未知 */
+    VERSION_QUERY_TYPE_APP_VERSION = 1;                         /* 查询版本 */
+    VERSION_QUERY_TYPE_APP_NAME = 2;                            /* 查询程序名称 */
+}
+
+/* 下位机版本查询参数 */
+message im_version_query_request {
+    reserved 1 to 4;
+    adjust_power_mode power_mode = 5;                          /* 电源工装校准模式 */
+    sfixed32 channel_id = 6;                                   /* 模组/电芯通道号 */
+    version_query_chip_type chip_type = 7;                     /* 芯片类型 */
+    version_query_type query_type = 8;                         /* 查询类型 */
+}
+
+/* 下位机版本查询返回参数 */
+message im_version_query_response {
+    reserved 1 to 4;
+    adjust_power_mode power_mode = 5;                          /* 电源工装校准模式 */
+    sfixed32 channel_id = 6;                                   /* 模组/电芯通道号 */
+    version_query_chip_type chip_type = 7;                     /* 芯片类型 */
+    version_query_type query_type = 8;                         /* 查询类型 */
+    cmd_result result = 9;                                     /* 命令结果 */
+    string app_version = 10;                                   /* 程序版本信息 */
+    string app_name = 11;                                      /* 程序名称 */
+}
+
+/* 中位机服务对外接口 */
+service imService {
+    rpc im_cmd_call(im_cmd_request)                                     returns (im_cmd_response);
+    rpc im_ajust_call(im_ajust_request)                                 returns (im_ajust_response);                /* 校准加载参数对外接口 */
+    rpc im_debug_call(im_debug_request)                                 returns (im_debug_response);                /* 调试查询对外接口 */
+    rpc im_eeprom_read(im_eeprom_request)                               returns (im_eeprom_read_response);          /* 读EEPROM对外接口 */
+    rpc im_eeprom_write(im_eeprom_request)                              returns (im_eeprom_write_response);         /* 写EEPROM对外接口 */
+    rpc im_negative_pressure_adjust_call(im_negative_pressure_request)  returns (im_negative_pressure_response);    /* 负压工装校准对外接口 */
+    rpc im_adjust_call_version_query(im_version_query_request)          returns (im_version_query_response);        /* 查询下位机版本对外接口 */
+}
+
+/* 上位机服务对外接口 */
+service pcService {
+    rpc ui_data_call(im_ui_data) returns(im_ui_data_response);
+    rpc ui_security_call(im_security_data) returns(im_ui_data_response);
+    rpc ui_upgrade_call(im_device_upgrade_data) returns(im_ui_data_response);
+}

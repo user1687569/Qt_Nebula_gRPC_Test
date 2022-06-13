@@ -16,7 +16,34 @@ SOURCES +=  \
     testing/testing.c \
     testing/testing_utils.c \
     gRPC/dev_monitor_main.c \
-    testing/testing_monitor.c
+    testing/testing_monitor.c \
+    gRPC/im.grpc-c.c \
+    gRPC/im.grpc-c.service.c \
+    testing/testing_protobuf.c \
+    gRPC/ipc_send_extern.c
+
+HEADERS += \
+    gRPC/im_utils.h \
+    testing/testing.h \
+    testing/testing_utils.h \
+    gRPC/gRPC.h \
+    gRPC/im_common.h \
+    gRPC/dev_monitor.h \
+    testing/testing_monitor.h \
+    gRPC/im.grpc-c.h \
+    testing/testing_protobuf.h \
+    gRPC/im_upgrade_data.h \
+    gRPC/im_passthrough_data.h
+
+INCLUDEPATH +=  \
+    -I /usr/local/include/grpc   \
+    -I /usr/local/include/protobuf-c
+
+LIBS += \
+    /usr/local/lib/libgrpc.so.18.0.0   \
+    /usr/local/lib/libprotobuf.so.26.0.8   \
+    /usr/local/lib/libprotobuf-c.so.1.0.0
+
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -29,11 +56,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-HEADERS += \
-    gRPC/im_utils.h \
-    testing/testing.h \
-    testing/testing_utils.h \
-    gRPC/gRPC.h \
-    gRPC/im_common.h \
-    gRPC/dev_monitor.h \
-    testing/testing_monitor.h
+
+DISTFILES += \
+    im.proto
