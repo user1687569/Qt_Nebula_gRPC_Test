@@ -9,10 +9,14 @@ CONFIG -= app_bundle
 
 TEMPLATE = app
 
-SOURCES += main.cpp \
-    im_common_utils.c \
+
+SOURCES +=  \
+    main.cpp \
+    gRPC/im_common_utils.c \
     testing/testing.c \
-    testing/testing_utils.c
+    testing/testing_utils.c \
+    gRPC/dev_monitor_main.c \
+    testing/testing_monitor.c
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -26,6 +30,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 HEADERS += \
-    im_utils.h \
+    gRPC/im_utils.h \
     testing/testing.h \
-    testing/testing_utils.h
+    testing/testing_utils.h \
+    gRPC/gRPC.h \
+    gRPC/im_common.h \
+    gRPC/dev_monitor.h \
+    testing/testing_monitor.h

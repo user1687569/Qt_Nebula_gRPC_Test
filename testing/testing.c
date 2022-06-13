@@ -3,4 +3,6 @@
 void testing()
 {
     testing_utils();
+
+    testing_monitor();
 }
