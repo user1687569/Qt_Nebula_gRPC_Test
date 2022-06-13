@@ -17,10 +17,11 @@ SOURCES +=  \
     testing/testing_utils.c \
     gRPC/dev_monitor_main.c \
     testing/testing_monitor.c \
-    gRPC/im.grpc-c.c \
-    gRPC/im.grpc-c.service.c \
     testing/testing_protobuf.c \
-    gRPC/ipc_send_extern.c
+    gRPC/ipc_send_extern.c      \
+    protobuf-c/im.pb-c.c    \
+#    grpc-c/im.grpc-c.c  \
+#    grpc-c/im.grpc-c.service.c
 
 HEADERS += \
     gRPC/im_utils.h \
@@ -30,18 +31,17 @@ HEADERS += \
     gRPC/im_common.h \
     gRPC/dev_monitor.h \
     testing/testing_monitor.h \
-    gRPC/im.grpc-c.h \
     testing/testing_protobuf.h \
     gRPC/im_upgrade_data.h \
-    gRPC/im_passthrough_data.h
+    gRPC/im_passthrough_data.h  \
+    protobuf-c/im.pb-c.h    \
+#    grpc/im.grpc-c.h
 
 INCLUDEPATH +=  \
-    -I /usr/local/include/grpc   \
-    -I /usr/local/include/protobuf-c
+    -I /usrlocal/include/protobuf-c
 
 LIBS += \
-    /usr/local/lib/libgrpc.so.18.0.0   \
-    /usr/local/lib/libprotobuf.so.26.0.8   \
+    /usr/local/lib/libprotobuf.so.26.0.8    \
     /usr/local/lib/libprotobuf-c.so.1.0.0
 
 

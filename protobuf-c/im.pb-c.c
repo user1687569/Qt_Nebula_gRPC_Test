@@ -6,7 +6,7 @@
 #define PROTOBUF_C__NO_DEPRECATED
 #endif
 
-#include "im.grpc-c.h"
+#include "im.pb-c.h"
 void   g_im__im_cmd_head__init
                      (GIm__ImCmdHead         *message)
 {
@@ -2712,9 +2712,9 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_head__field_descriptors[3] =
   {
     "magic",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImCmdHead, has_magic),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdHead, magic),
     NULL,
     NULL,
@@ -2724,9 +2724,9 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_head__field_descriptors[3] =
   {
     "seq_num",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImCmdHead, has_seq_num),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdHead, seq_num),
     NULL,
     NULL,
@@ -2736,9 +2736,9 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_head__field_descriptors[3] =
   {
     "op",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImCmdHead, has_op),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdHead, op),
     &g_im__cmd_type__descriptor,
     NULL,
@@ -2776,9 +2776,9 @@ static const ProtobufCFieldDescriptor g_im__im_auth__field_descriptors[6] =
   {
     "type",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImAuth, has_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAuth, type),
     &g_im__auth_type__descriptor,
     NULL,
@@ -2788,9 +2788,9 @@ static const ProtobufCFieldDescriptor g_im__im_auth__field_descriptors[6] =
   {
     "auth_times",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImAuth, has_auth_times),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAuth, auth_times),
     NULL,
     NULL,
@@ -2800,9 +2800,9 @@ static const ProtobufCFieldDescriptor g_im__im_auth__field_descriptors[6] =
   {
     "auth_year",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImAuth, has_auth_year),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAuth, auth_year),
     NULL,
     NULL,
@@ -2812,9 +2812,9 @@ static const ProtobufCFieldDescriptor g_im__im_auth__field_descriptors[6] =
   {
     "auth_month",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImAuth, has_auth_month),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAuth, auth_month),
     NULL,
     NULL,
@@ -2824,9 +2824,9 @@ static const ProtobufCFieldDescriptor g_im__im_auth__field_descriptors[6] =
   {
     "auth_day",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImAuth, has_auth_day),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAuth, auth_day),
     NULL,
     NULL,
@@ -2836,9 +2836,9 @@ static const ProtobufCFieldDescriptor g_im__im_auth__field_descriptors[6] =
   {
     "auth_start_time",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED64,
-    offsetof(GIm__ImAuth, has_auth_start_time),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAuth, auth_start_time),
     NULL,
     NULL,
@@ -2879,9 +2879,9 @@ static const ProtobufCFieldDescriptor g_im__im_data_store4unit__field_descriptor
   {
     "enable",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(GIm__ImDataStore4unit, has_enable),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDataStore4unit, enable),
     NULL,
     NULL,
@@ -2897,7 +2897,7 @@ static const ProtobufCFieldDescriptor g_im__im_data_store4unit__field_descriptor
     offsetof(GIm__ImDataStore4unit, unit_num),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
@@ -2930,9 +2930,9 @@ static const ProtobufCFieldDescriptor g_im__im_data_store4alarm__field_descripto
   {
     "enable",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(GIm__ImDataStore4alarm, has_enable),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDataStore4alarm, enable),
     NULL,
     NULL,
@@ -2942,9 +2942,9 @@ static const ProtobufCFieldDescriptor g_im__im_data_store4alarm__field_descripto
   {
     "interval",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDataStore4alarm, has_interval),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDataStore4alarm, interval),
     NULL,
     NULL,
@@ -2954,9 +2954,9 @@ static const ProtobufCFieldDescriptor g_im__im_data_store4alarm__field_descripto
   {
     "time",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDataStore4alarm, has_time),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDataStore4alarm, time),
     NULL,
     NULL,
@@ -2994,9 +2994,9 @@ static const ProtobufCFieldDescriptor g_im__smoke_item__field_descriptors[2] =
   {
     "smoke_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__SmokeItem, has_smoke_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__SmokeItem, smoke_id),
     NULL,
     NULL,
@@ -3006,9 +3006,9 @@ static const ProtobufCFieldDescriptor g_im__smoke_item__field_descriptors[2] =
   {
     "smoke_state",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__SmokeItem, has_smoke_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__SmokeItem, smoke_state),
     &g_im__device_state__descriptor,
     NULL,
@@ -3045,9 +3045,9 @@ static const ProtobufCFieldDescriptor g_im__smoke_data__field_descriptors[2] =
   {
     "state",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__SmokeData, has_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__SmokeData, state),
     &g_im__device_state__descriptor,
     NULL,
@@ -3096,9 +3096,9 @@ static const ProtobufCFieldDescriptor g_im__im_co_item__field_descriptors[3] =
   {
     "co_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImCoItem, has_co_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCoItem, co_id),
     NULL,
     NULL,
@@ -3108,9 +3108,9 @@ static const ProtobufCFieldDescriptor g_im__im_co_item__field_descriptors[3] =
   {
     "co_state",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImCoItem, has_co_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCoItem, co_state),
     &g_im__device_state__descriptor,
     NULL,
@@ -3120,9 +3120,9 @@ static const ProtobufCFieldDescriptor g_im__im_co_item__field_descriptors[3] =
   {
     "solubility",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImCoItem, has_solubility),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCoItem, solubility),
     NULL,
     NULL,
@@ -3160,9 +3160,9 @@ static const ProtobufCFieldDescriptor g_im__im_co_data__field_descriptors[2] =
   {
     "state",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImCoData, has_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCoData, state),
     &g_im__device_state__descriptor,
     NULL,
@@ -3211,9 +3211,9 @@ static const ProtobufCFieldDescriptor g_im__im_fan__item__field_descriptors[2] =
   {
     "fan_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImFanItem, has_fan_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImFanItem, fan_id),
     NULL,
     NULL,
@@ -3223,9 +3223,9 @@ static const ProtobufCFieldDescriptor g_im__im_fan__item__field_descriptors[2] =
   {
     "fan_state",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImFanItem, has_fan_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImFanItem, fan_state),
     &g_im__device_state__descriptor,
     NULL,
@@ -3262,9 +3262,9 @@ static const ProtobufCFieldDescriptor g_im__im_fan_data__field_descriptors[2] =
   {
     "state",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImFanData, has_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImFanData, state),
     &g_im__device_state__descriptor,
     NULL,
@@ -3313,9 +3313,9 @@ static const ProtobufCFieldDescriptor g_im__im_temp_item__field_descriptors[3] =
   {
     "temp_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImTempItem, has_temp_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImTempItem, temp_id),
     NULL,
     NULL,
@@ -3325,9 +3325,9 @@ static const ProtobufCFieldDescriptor g_im__im_temp_item__field_descriptors[3] =
   {
     "temp_value",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImTempItem, has_temp_value),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImTempItem, temp_value),
     NULL,
     NULL,
@@ -3337,9 +3337,9 @@ static const ProtobufCFieldDescriptor g_im__im_temp_item__field_descriptors[3] =
   {
     "state",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImTempItem, has_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImTempItem, state),
     &g_im__device_state__descriptor,
     NULL,
@@ -3377,9 +3377,9 @@ static const ProtobufCFieldDescriptor g_im__env_temp_data__field_descriptors[2] 
   {
     "state",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__EnvTempData, has_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__EnvTempData, state),
     &g_im__device_state__descriptor,
     NULL,
@@ -3428,9 +3428,9 @@ static const ProtobufCFieldDescriptor g_im__negativepressure_data__field_descrip
   {
     "state",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__NegativepressureData, has_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__NegativepressureData, state),
     &g_im__device_state__descriptor,
     NULL,
@@ -3440,9 +3440,9 @@ static const ProtobufCFieldDescriptor g_im__negativepressure_data__field_descrip
   {
     "negativepressure_id",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__NegativepressureData, has_negativepressure_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__NegativepressureData, negativepressure_id),
     NULL,
     NULL,
@@ -3452,9 +3452,9 @@ static const ProtobufCFieldDescriptor g_im__negativepressure_data__field_descrip
   {
     "negativepressure_value",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__NegativepressureData, has_negativepressure_value),
+    0,   /* quantifier_offset */
     offsetof(GIm__NegativepressureData, negativepressure_value),
     NULL,
     NULL,
@@ -3476,9 +3476,9 @@ static const ProtobufCFieldDescriptor g_im__negativepressure_data__field_descrip
   {
     "negativepressure_action",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__NegativepressureData, has_negativepressure_action),
+    0,   /* quantifier_offset */
     offsetof(GIm__NegativepressureData, negativepressure_action),
     &g_im__negativepressure_action__descriptor,
     NULL,
@@ -3488,9 +3488,9 @@ static const ProtobufCFieldDescriptor g_im__negativepressure_data__field_descrip
   {
     "negativepressure_operation_items",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__NegativepressureData, has_negativepressure_operation_items),
+    0,   /* quantifier_offset */
     offsetof(GIm__NegativepressureData, negativepressure_operation_items),
     &g_im__negativepressure_operation_items__descriptor,
     NULL,
@@ -3531,9 +3531,9 @@ static const ProtobufCFieldDescriptor g_im__alarm_param_data__field_descriptors[
   {
     "param_id",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__AlarmParamData, has_param_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__AlarmParamData, param_id),
     NULL,
     NULL,
@@ -3543,9 +3543,9 @@ static const ProtobufCFieldDescriptor g_im__alarm_param_data__field_descriptors[
   {
     "param_value",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__AlarmParamData, has_param_value),
+    0,   /* quantifier_offset */
     offsetof(GIm__AlarmParamData, param_value),
     NULL,
     NULL,
@@ -3555,21 +3555,21 @@ static const ProtobufCFieldDescriptor g_im__alarm_param_data__field_descriptors[
   {
     "unit_name",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__AlarmParamData, unit_name),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "alarm_time",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SINT64,
-    offsetof(GIm__AlarmParamData, has_alarm_time),
+    0,   /* quantifier_offset */
     offsetof(GIm__AlarmParamData, alarm_time),
     NULL,
     NULL,
@@ -3608,21 +3608,21 @@ static const ProtobufCFieldDescriptor g_im__alarm_set_param_data__field_descript
   {
     "param_name",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__AlarmSetParamData, param_name),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "param_value",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__AlarmSetParamData, has_param_value),
+    0,   /* quantifier_offset */
     offsetof(GIm__AlarmSetParamData, param_value),
     NULL,
     NULL,
@@ -3659,12 +3659,12 @@ static const ProtobufCFieldDescriptor g_im__serucrity_alarm_data__field_descript
   {
     "alarm_code",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__SerucrityAlarmData, alarm_code),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -3723,33 +3723,33 @@ static const ProtobufCFieldDescriptor g_im__serucrity_combination_alarm_data__fi
   {
     "rule_name",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__SerucrityCombinationAlarmData, rule_name),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "action_name",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__SerucrityCombinationAlarmData, action_name),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "alarm_time",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SINT64,
-    offsetof(GIm__SerucrityCombinationAlarmData, has_alarm_time),
+    0,   /* quantifier_offset */
     offsetof(GIm__SerucrityCombinationAlarmData, alarm_time),
     NULL,
     NULL,
@@ -3759,9 +3759,9 @@ static const ProtobufCFieldDescriptor g_im__serucrity_combination_alarm_data__fi
   {
     "reset_state",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__SerucrityCombinationAlarmData, has_reset_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__SerucrityCombinationAlarmData, reset_state),
     &g_im__serucrity_reset_state__descriptor,
     NULL,
@@ -3771,9 +3771,9 @@ static const ProtobufCFieldDescriptor g_im__serucrity_combination_alarm_data__fi
   {
     "secondary_reset_state",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__SerucrityCombinationAlarmData, has_secondary_reset_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__SerucrityCombinationAlarmData, secondary_reset_state),
     &g_im__serucrity_reset_state__descriptor,
     NULL,
@@ -3783,9 +3783,9 @@ static const ProtobufCFieldDescriptor g_im__serucrity_combination_alarm_data__fi
   {
     "secondary_security_result",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__SerucrityCombinationAlarmData, has_secondary_security_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__SerucrityCombinationAlarmData, secondary_security_result),
     &g_im__secondary_security_result_state__descriptor,
     NULL,
@@ -3795,9 +3795,9 @@ static const ProtobufCFieldDescriptor g_im__serucrity_combination_alarm_data__fi
   {
     "secondary_security_time",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SINT64,
-    offsetof(GIm__SerucrityCombinationAlarmData, has_secondary_security_time),
+    0,   /* quantifier_offset */
     offsetof(GIm__SerucrityCombinationAlarmData, secondary_security_time),
     NULL,
     NULL,
@@ -3839,9 +3839,9 @@ static const ProtobufCFieldDescriptor g_im__lowercomputer_data__field_descriptor
   {
     "abnormal_time",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED64,
-    offsetof(GIm__LowercomputerData, has_abnormal_time),
+    0,   /* quantifier_offset */
     offsetof(GIm__LowercomputerData, abnormal_time),
     NULL,
     NULL,
@@ -3851,9 +3851,9 @@ static const ProtobufCFieldDescriptor g_im__lowercomputer_data__field_descriptor
   {
     "lowercomputer_status",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__LowercomputerData, has_lowercomputer_status),
+    0,   /* quantifier_offset */
     offsetof(GIm__LowercomputerData, lowercomputer_status),
     &g_im__lowercomputer_status__descriptor,
     NULL,
@@ -3891,9 +3891,9 @@ static const ProtobufCFieldDescriptor g_im__plc_failure_data__field_descriptors[
   {
     "plc_message",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED64,
-    offsetof(GIm__PlcFailureData, has_plc_message),
+    0,   /* quantifier_offset */
     offsetof(GIm__PlcFailureData, plc_message),
     NULL,
     NULL,
@@ -3903,9 +3903,9 @@ static const ProtobufCFieldDescriptor g_im__plc_failure_data__field_descriptors[
   {
     "general_failure",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED64,
-    offsetof(GIm__PlcFailureData, has_general_failure),
+    0,   /* quantifier_offset */
     offsetof(GIm__PlcFailureData, general_failure),
     NULL,
     NULL,
@@ -3915,9 +3915,9 @@ static const ProtobufCFieldDescriptor g_im__plc_failure_data__field_descriptors[
   {
     "security_failure",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED64,
-    offsetof(GIm__PlcFailureData, has_security_failure),
+    0,   /* quantifier_offset */
     offsetof(GIm__PlcFailureData, security_failure),
     NULL,
     NULL,
@@ -3955,9 +3955,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "stock_no",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImStockSecurityInfo, has_stock_no),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, stock_no),
     NULL,
     NULL,
@@ -3967,9 +3967,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "stockdoor_state",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_stockdoor_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, stockdoor_state),
     &g_im__door_state__descriptor,
     NULL,
@@ -3979,9 +3979,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "tray_state",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_tray_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, tray_state),
     &g_im__tray_state__descriptor,
     NULL,
@@ -3991,9 +3991,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "accessdoor_state",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_accessdoor_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, accessdoor_state),
     &g_im__accessdoor_state__descriptor,
     NULL,
@@ -4003,9 +4003,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "firedoor_state",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_firedoor_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, firedoor_state),
     &g_im__firedoor_state__descriptor,
     NULL,
@@ -4015,9 +4015,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "needlebed_out_state",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_needlebed_out_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, needlebed_out_state),
     &g_im__needlebed_state__descriptor,
     NULL,
@@ -4027,9 +4027,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "needlebed_press_state",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_needlebed_press_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, needlebed_press_state),
     &g_im__needlebed_state__descriptor,
     NULL,
@@ -4039,9 +4039,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "scapegoat_state",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_scapegoat_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, scapegoat_state),
     &g_im__scapegoat_state__descriptor,
     NULL,
@@ -4051,7 +4051,7 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "smoke_data",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, smoke_data),
@@ -4063,9 +4063,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "reservoir_state",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_reservoir_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, reservoir_state),
     &g_im__reservoir_state__descriptor,
     NULL,
@@ -4075,7 +4075,7 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "co_data",
     15,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, co_data),
@@ -4087,7 +4087,7 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "security_fan_data",
     16,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, security_fan_data),
@@ -4099,7 +4099,7 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "power_fan_data",
     17,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, power_fan_data),
@@ -4111,7 +4111,7 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "cabletray_fan_data",
     18,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, cabletray_fan_data),
@@ -4123,7 +4123,7 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "env_temp_data",
     19,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, env_temp_data),
@@ -4135,7 +4135,7 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "power_fan_temp_data",
     20,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, power_fan_temp_data),
@@ -4147,7 +4147,7 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "negativepressure_data",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, negativepressure_data),
@@ -4159,9 +4159,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "plc_status",
     22,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_plc_status),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, plc_status),
     &g_im__plc_status__descriptor,
     NULL,
@@ -4183,9 +4183,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "stock_model",
     24,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_stock_model),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, stock_model),
     &g_im__stock_model__descriptor,
     NULL,
@@ -4219,7 +4219,7 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "plc_failure_data",
     27,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, plc_failure_data),
@@ -4231,9 +4231,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "stock_state",
     28,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_stock_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, stock_state),
     &g_im__stock_state__descriptor,
     NULL,
@@ -4243,9 +4243,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "security_runing_state",
     29,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_security_runing_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, security_runing_state),
     &g_im__security_runing_state__descriptor,
     NULL,
@@ -4255,9 +4255,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "electric_ball_valve_state",
     30,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_electric_ball_valve_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, electric_ball_valve_state),
     &g_im__electric_ball_valve_state__descriptor,
     NULL,
@@ -4267,9 +4267,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "security_message",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED64,
-    offsetof(GIm__ImStockSecurityInfo, has_security_message),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, security_message),
     NULL,
     NULL,
@@ -4279,9 +4279,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "suction_vacuum_valve_state",
     32,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_suction_vacuum_valve_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, suction_vacuum_valve_state),
     &g_im__electric_ball_valve_state__descriptor,
     NULL,
@@ -4291,9 +4291,9 @@ static const ProtobufCFieldDescriptor g_im__im_stock_security_info__field_descri
   {
     "vacuum_breaker_valve_state",
     33,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImStockSecurityInfo, has_vacuum_breaker_valve_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStockSecurityInfo, vacuum_breaker_valve_state),
     &g_im__electric_ball_valve_state__descriptor,
     NULL,
@@ -4357,7 +4357,7 @@ static const ProtobufCFieldDescriptor g_im__im_security_data__field_descriptors[
   {
     "head",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImSecurityData, head),
@@ -4408,21 +4408,21 @@ static const ProtobufCFieldDescriptor g_im__im_device_update_info__field_descrip
   {
     "update_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDeviceUpdateInfo, update_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "device_type",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDeviceUpdateInfo, has_device_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDeviceUpdateInfo, device_type),
     NULL,
     NULL,
@@ -4432,21 +4432,21 @@ static const ProtobufCFieldDescriptor g_im__im_device_update_info__field_descrip
   {
     "device_addr",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDeviceUpdateInfo, device_addr),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "device_port",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDeviceUpdateInfo, has_device_port),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDeviceUpdateInfo, device_port),
     NULL,
     NULL,
@@ -4456,9 +4456,9 @@ static const ProtobufCFieldDescriptor g_im__im_device_update_info__field_descrip
   {
     "update_status",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImDeviceUpdateInfo, has_update_status),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDeviceUpdateInfo, update_status),
     &g_im__deviece_update_status__descriptor,
     NULL,
@@ -4468,9 +4468,9 @@ static const ProtobufCFieldDescriptor g_im__im_device_update_info__field_descrip
   {
     "update_errorcode",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImDeviceUpdateInfo, has_update_errorcode),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDeviceUpdateInfo, update_errorcode),
     &g_im__deviece_update_errorcode__descriptor,
     NULL,
@@ -4511,57 +4511,57 @@ static const ProtobufCFieldDescriptor g_im__im_device_passthrough_response__fiel
   {
     "address",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDevicePassthroughResponse, address),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "port",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDevicePassthroughResponse, port),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "content",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDevicePassthroughResponse, content),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "channel_id",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDevicePassthroughResponse, channel_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "result",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDevicePassthroughResponse, has_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDevicePassthroughResponse, result),
     NULL,
     NULL,
@@ -4601,7 +4601,7 @@ static const ProtobufCFieldDescriptor g_im__im_device_upgrade_data__field_descri
   {
     "head",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDeviceUpgradeData, head),
@@ -4613,9 +4613,9 @@ static const ProtobufCFieldDescriptor g_im__im_device_upgrade_data__field_descri
   {
     "device_upgrade_type",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImDeviceUpgradeData, has_device_upgrade_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDeviceUpgradeData, device_upgrade_type),
     &g_im__device_upgrade_type__descriptor,
     NULL,
@@ -4637,7 +4637,7 @@ static const ProtobufCFieldDescriptor g_im__im_device_upgrade_data__field_descri
   {
     "passthrough_data",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDeviceUpgradeData, passthrough_data),
@@ -4678,9 +4678,9 @@ static const ProtobufCFieldDescriptor g_im__im_device_upgrad_notify__field_descr
   {
     "device_upgrade_type",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImDeviceUpgradNotify, has_device_upgrade_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDeviceUpgradNotify, device_upgrade_type),
     &g_im__device_upgrade_type__descriptor,
     NULL,
@@ -4716,9 +4716,9 @@ static const ProtobufCFieldDescriptor g_im__im_netcard_param__field_descriptors[
   {
     "mobile",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(GIm__ImNetcardParam, has_mobile),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNetcardParam, mobile),
     NULL,
     NULL,
@@ -4728,9 +4728,9 @@ static const ProtobufCFieldDescriptor g_im__im_netcard_param__field_descriptors[
   {
     "dhcp",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(GIm__ImNetcardParam, has_dhcp),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNetcardParam, dhcp),
     NULL,
     NULL,
@@ -4740,9 +4740,9 @@ static const ProtobufCFieldDescriptor g_im__im_netcard_param__field_descriptors[
   {
     "ipaddr",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImNetcardParam, has_ipaddr),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNetcardParam, ipaddr),
     NULL,
     NULL,
@@ -4752,9 +4752,9 @@ static const ProtobufCFieldDescriptor g_im__im_netcard_param__field_descriptors[
   {
     "netmsk",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImNetcardParam, has_netmsk),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNetcardParam, netmsk),
     NULL,
     NULL,
@@ -4764,9 +4764,9 @@ static const ProtobufCFieldDescriptor g_im__im_netcard_param__field_descriptors[
   {
     "gateway",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImNetcardParam, has_gateway),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNetcardParam, gateway),
     NULL,
     NULL,
@@ -4776,21 +4776,21 @@ static const ProtobufCFieldDescriptor g_im__im_netcard_param__field_descriptors[
   {
     "mac_addr",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImNetcardParam, mac_addr),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dns1",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImNetcardParam, has_dns1),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNetcardParam, dns1),
     NULL,
     NULL,
@@ -4800,9 +4800,9 @@ static const ProtobufCFieldDescriptor g_im__im_netcard_param__field_descriptors[
   {
     "dns2",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImNetcardParam, has_dns2),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNetcardParam, dns2),
     NULL,
     NULL,
@@ -4812,9 +4812,9 @@ static const ProtobufCFieldDescriptor g_im__im_netcard_param__field_descriptors[
   {
     "cmd_port",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImNetcardParam, has_cmd_port),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNetcardParam, cmd_port),
     NULL,
     NULL,
@@ -4824,9 +4824,9 @@ static const ProtobufCFieldDescriptor g_im__im_netcard_param__field_descriptors[
   {
     "ui_port",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImNetcardParam, has_ui_port),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNetcardParam, ui_port),
     NULL,
     NULL,
@@ -4836,9 +4836,9 @@ static const ProtobufCFieldDescriptor g_im__im_netcard_param__field_descriptors[
   {
     "boardcast_port",
     15,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImNetcardParam, has_boardcast_port),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNetcardParam, boardcast_port),
     NULL,
     NULL,
@@ -4884,9 +4884,9 @@ static const ProtobufCFieldDescriptor g_im__im_master_channel_ret__field_descrip
   {
     "channel_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImMasterChannelRet, has_channel_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImMasterChannelRet, channel_id),
     NULL,
     NULL,
@@ -4896,9 +4896,9 @@ static const ProtobufCFieldDescriptor g_im__im_master_channel_ret__field_descrip
   {
     "result",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImMasterChannelRet, has_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImMasterChannelRet, result),
     NULL,
     NULL,
@@ -4935,9 +4935,9 @@ static const ProtobufCFieldDescriptor g_im__im_step_jump__field_descriptors[2] =
   {
     "step",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImStepJump, has_step),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImStepJump, step),
     NULL,
     NULL,
@@ -4953,7 +4953,7 @@ static const ProtobufCFieldDescriptor g_im__im_step_jump__field_descriptors[2] =
     offsetof(GIm__ImStepJump, channels),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
@@ -4986,9 +4986,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_continue_ret__field_descr
   {
     "step",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImChannelContinueRet, has_step),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelContinueRet, step),
     NULL,
     NULL,
@@ -5037,9 +5037,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_enable_byip_result__field
   {
     "ipaddr",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImChannelEnableByipResult, has_ipaddr),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelEnableByipResult, ipaddr),
     NULL,
     NULL,
@@ -5049,9 +5049,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_enable_byip_result__field
   {
     "result",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImChannelEnableByipResult, has_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelEnableByipResult, result),
     NULL,
     NULL,
@@ -5088,9 +5088,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_appoint_stop__field_descr
   {
     "is_set",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(GIm__ImChannelAppointStop, has_is_set),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelAppointStop, is_set),
     NULL,
     NULL,
@@ -5100,9 +5100,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_appoint_stop__field_descr
   {
     "stop_type",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImChannelAppointStop, has_stop_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelAppointStop, stop_type),
     &g_im__im_appoint_stop_type__descriptor,
     NULL,
@@ -5112,9 +5112,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_appoint_stop__field_descr
   {
     "invalid4curstep",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(GIm__ImChannelAppointStop, has_invalid4curstep),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelAppointStop, invalid4curstep),
     NULL,
     NULL,
@@ -5124,9 +5124,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_appoint_stop__field_descr
   {
     "step",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImChannelAppointStop, has_step),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelAppointStop, step),
     NULL,
     NULL,
@@ -5136,9 +5136,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_appoint_stop__field_descr
   {
     "loop_times",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImChannelAppointStop, has_loop_times),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelAppointStop, loop_times),
     NULL,
     NULL,
@@ -5148,9 +5148,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_appoint_stop__field_descr
   {
     "msec",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED64,
-    offsetof(GIm__ImChannelAppointStop, has_msec),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelAppointStop, msec),
     NULL,
     NULL,
@@ -5191,9 +5191,9 @@ static const ProtobufCFieldDescriptor g_im__im_security_stop_by_stock__field_des
   {
     "stock_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImSecurityStopByStock, has_stock_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImSecurityStopByStock, stock_id),
     NULL,
     NULL,
@@ -5203,9 +5203,9 @@ static const ProtobufCFieldDescriptor g_im__im_security_stop_by_stock__field_des
   {
     "success",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(GIm__ImSecurityStopByStock, has_success),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImSecurityStopByStock, success),
     NULL,
     NULL,
@@ -5242,9 +5242,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_test__field_descriptors[2
   {
     "channel_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImChannelTest, has_channel_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelTest, channel_id),
     NULL,
     NULL,
@@ -5254,12 +5254,12 @@ static const ProtobufCFieldDescriptor g_im__im_channel_test__field_descriptors[2
   {
     "step_file_path",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImChannelTest, step_file_path),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -5293,9 +5293,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_clear_warn__field_descrip
   {
     "channel_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SINT32,
-    offsetof(GIm__ImChannelClearWarn, has_channel_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelClearWarn, channel_id),
     NULL,
     NULL,
@@ -5311,7 +5311,7 @@ static const ProtobufCFieldDescriptor g_im__im_channel_clear_warn__field_descrip
     offsetof(GIm__ImChannelClearWarn, warn_type),
     &g_im__im_warn_type__descriptor,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
@@ -5344,9 +5344,9 @@ static const ProtobufCFieldDescriptor g_im__im_security_clear_warn__field_descri
   {
     "stock_no",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImSecurityClearWarn, has_stock_no),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImSecurityClearWarn, stock_no),
     NULL,
     NULL,
@@ -5356,12 +5356,12 @@ static const ProtobufCFieldDescriptor g_im__im_security_clear_warn__field_descri
   {
     "alarm_code",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImSecurityClearWarn, alarm_code),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -5395,9 +5395,9 @@ static const ProtobufCFieldDescriptor g_im__im_display_time_protection__field_de
   {
     "enable",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(GIm__ImDisplayTimeProtection, has_enable),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDisplayTimeProtection, enable),
     NULL,
     NULL,
@@ -5407,9 +5407,9 @@ static const ProtobufCFieldDescriptor g_im__im_display_time_protection__field_de
   {
     "sampling_interval",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDisplayTimeProtection, has_sampling_interval),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDisplayTimeProtection, sampling_interval),
     NULL,
     NULL,
@@ -5419,9 +5419,9 @@ static const ProtobufCFieldDescriptor g_im__im_display_time_protection__field_de
   {
     "record_time",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDisplayTimeProtection, has_record_time),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDisplayTimeProtection, record_time),
     NULL,
     NULL,
@@ -5431,9 +5431,9 @@ static const ProtobufCFieldDescriptor g_im__im_display_time_protection__field_de
   {
     "volt_upper_limit_protection",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(GIm__ImDisplayTimeProtection, has_volt_upper_limit_protection),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDisplayTimeProtection, volt_upper_limit_protection),
     NULL,
     NULL,
@@ -5443,9 +5443,9 @@ static const ProtobufCFieldDescriptor g_im__im_display_time_protection__field_de
   {
     "volt_lower_limit_protection",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(GIm__ImDisplayTimeProtection, has_volt_lower_limit_protection),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDisplayTimeProtection, volt_lower_limit_protection),
     NULL,
     NULL,
@@ -5485,24 +5485,24 @@ static const ProtobufCFieldDescriptor g_im__im_soft_update__field_descriptors[2]
   {
     "passwd",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImSoftUpdate, passwd),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "update_file_path",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImSoftUpdate, update_file_path),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -5536,24 +5536,24 @@ static const ProtobufCFieldDescriptor g_im__im_device_update__field_descriptors[
   {
     "check",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDeviceUpdate, check),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "update_file_path",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDeviceUpdate, update_file_path),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -5587,45 +5587,45 @@ static const ProtobufCFieldDescriptor g_im__im_device_passthrough__field_descrip
   {
     "address",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDevicePassthrough, address),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "port",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDevicePassthrough, port),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "content",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDevicePassthrough, content),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "im_communication_protocol",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDevicePassthrough, has_im_communication_protocol),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDevicePassthrough, im_communication_protocol),
     NULL,
     NULL,
@@ -5635,12 +5635,12 @@ static const ProtobufCFieldDescriptor g_im__im_device_passthrough__field_descrip
   {
     "channel_id",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImDevicePassthrough, channel_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -5677,7 +5677,7 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "cmd_head",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, cmd_head),
@@ -5695,7 +5695,7 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
     offsetof(GIm__ImCmdRequest, chnl_nodes),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
@@ -5719,13 +5719,13 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
     offsetof(GIm__ImCmdRequest, step_nums),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "update",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, update),
@@ -5737,9 +5737,9 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "type",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImCmdRequest, has_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, type),
     &g_im__sysconf_update_type__descriptor,
     NULL,
@@ -5749,9 +5749,9 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "time_set_msec",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED64,
-    offsetof(GIm__ImCmdRequest, has_time_set_msec),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, time_set_msec),
     NULL,
     NULL,
@@ -5761,7 +5761,7 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "auth",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, auth),
@@ -5779,13 +5779,13 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
     offsetof(GIm__ImCmdRequest, ipaddr_nodes),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "unit_data",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, unit_data),
@@ -5797,7 +5797,7 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "alarm_data",
     15,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, alarm_data),
@@ -5809,9 +5809,9 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "enable",
     16,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(GIm__ImCmdRequest, has_enable),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, enable),
     NULL,
     NULL,
@@ -5827,13 +5827,13 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
     offsetof(GIm__ImCmdRequest, security_stop),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "step_jump",
     18,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, step_jump),
@@ -5845,7 +5845,7 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "chnl_appoint",
     19,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, chnl_appoint),
@@ -5869,9 +5869,9 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "transfer_model",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImCmdRequest, has_transfer_model),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, transfer_model),
     &g_im__security_transfer_model__descriptor,
     NULL,
@@ -5881,7 +5881,7 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "security_clear_warn",
     22,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, security_clear_warn),
@@ -5905,9 +5905,9 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "stock_no",
     24,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SINT32,
-    offsetof(GIm__ImCmdRequest, has_stock_no),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, stock_no),
     NULL,
     NULL,
@@ -5917,7 +5917,7 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "serucrity_result",
     25,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, serucrity_result),
@@ -5929,7 +5929,7 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "device_update",
     26,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, device_update),
@@ -5941,7 +5941,7 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "device_passthrough",
     27,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, device_passthrough),
@@ -5953,9 +5953,9 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "stock_state",
     28,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImCmdRequest, has_stock_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, stock_state),
     &g_im__stock_state__descriptor,
     NULL,
@@ -5965,9 +5965,9 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "workjust_type",
     29,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImCmdRequest, has_workjust_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, workjust_type),
     &g_im__workjust_type__descriptor,
     NULL,
@@ -5977,21 +5977,21 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_request__field_descriptors[27
   {
     "disable_security_code",
     30,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, disable_security_code),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "adjust_power_mode",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImCmdRequest, has_adjust_power_mode),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdRequest, adjust_power_mode),
     &g_im__adjust_power_mode__descriptor,
     NULL,
@@ -6053,9 +6053,9 @@ static const ProtobufCFieldDescriptor g_im__execute_serucrity_result__field_desc
   {
     "stock_no",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SINT32,
-    offsetof(GIm__ExecuteSerucrityResult, has_stock_no),
+    0,   /* quantifier_offset */
     offsetof(GIm__ExecuteSerucrityResult, stock_no),
     NULL,
     NULL,
@@ -6065,9 +6065,9 @@ static const ProtobufCFieldDescriptor g_im__execute_serucrity_result__field_desc
   {
     "execute_result",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ExecuteSerucrityResult, has_execute_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__ExecuteSerucrityResult, execute_result),
     &g_im__execute_result__descriptor,
     NULL,
@@ -6104,7 +6104,7 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_response__field_descriptors[1
   {
     "cmd_head",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdResponse, cmd_head),
@@ -6116,9 +6116,9 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_response__field_descriptors[1
   {
     "result",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImCmdResponse, has_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdResponse, result),
     &g_im__cmd_result__descriptor,
     NULL,
@@ -6140,21 +6140,21 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_response__field_descriptors[1
   {
     "im_version",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdResponse, im_version),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "type",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImCmdResponse, has_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdResponse, type),
     &g_im__sysconf_update_type__descriptor,
     NULL,
@@ -6164,7 +6164,7 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_response__field_descriptors[1
   {
     "auth_info",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdResponse, auth_info),
@@ -6188,7 +6188,7 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_response__field_descriptors[1
   {
     "step_op",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImCmdResponse, step_op),
@@ -6212,9 +6212,9 @@ static const ProtobufCFieldDescriptor g_im__im_cmd_response__field_descriptors[1
   {
     "self_check_result",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImCmdResponse, has_self_check_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCmdResponse, self_check_result),
     NULL,
     NULL,
@@ -6272,9 +6272,9 @@ static const ProtobufCFieldDescriptor g_im__im_chnnel_warn__field_descriptors[4]
   {
     "warn_type",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImChnnelWarn, has_warn_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChnnelWarn, warn_type),
     &g_im__im_warn_type__descriptor,
     NULL,
@@ -6284,9 +6284,9 @@ static const ProtobufCFieldDescriptor g_im__im_chnnel_warn__field_descriptors[4]
   {
     "warn_src_id",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SINT32,
-    offsetof(GIm__ImChnnelWarn, has_warn_src_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChnnelWarn, warn_src_id),
     NULL,
     NULL,
@@ -6296,9 +6296,9 @@ static const ProtobufCFieldDescriptor g_im__im_chnnel_warn__field_descriptors[4]
   {
     "warn_code",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SINT64,
-    offsetof(GIm__ImChnnelWarn, has_warn_code),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChnnelWarn, warn_code),
     NULL,
     NULL,
@@ -6308,9 +6308,9 @@ static const ProtobufCFieldDescriptor g_im__im_chnnel_warn__field_descriptors[4]
   {
     "warn_time",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SINT64,
-    offsetof(GIm__ImChnnelWarn, has_warn_time),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChnnelWarn, warn_time),
     NULL,
     NULL,
@@ -6349,45 +6349,45 @@ static const ProtobufCFieldDescriptor g_im__im_extern_data__field_descriptors[6]
   {
     "alias_name",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImExternData, alias_name),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "unit",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImExternData, unit),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "key_name",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImExternData, key_name),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dev_type",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImExternData, has_dev_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImExternData, dev_type),
     NULL,
     NULL,
@@ -6397,9 +6397,9 @@ static const ProtobufCFieldDescriptor g_im__im_extern_data__field_descriptors[6]
   {
     "dev_index",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImExternData, has_dev_index),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImExternData, dev_index),
     NULL,
     NULL,
@@ -6409,9 +6409,9 @@ static const ProtobufCFieldDescriptor g_im__im_extern_data__field_descriptors[6]
   {
     "value",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImExternData, has_value),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImExternData, value),
     NULL,
     NULL,
@@ -6452,9 +6452,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "channel_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SINT32,
-    offsetof(GIm__ImChannelParam, has_channel_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, channel_id),
     NULL,
     NULL,
@@ -6464,9 +6464,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "work_state",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImChannelParam, has_work_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, work_state),
     &g_im__channel_st__descriptor,
     NULL,
@@ -6476,9 +6476,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "power_state",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImChannelParam, has_power_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, power_state),
     &g_im__power_channel_st__descriptor,
     NULL,
@@ -6488,9 +6488,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "assist_state",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImChannelParam, has_assist_state),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, assist_state),
     &g_im__ch_assist_st__descriptor,
     NULL,
@@ -6512,21 +6512,21 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "loop_num",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, loop_num),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "step_num",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SINT32,
-    offsetof(GIm__ImChannelParam, has_step_num),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, step_num),
     NULL,
     NULL,
@@ -6536,21 +6536,21 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "step_name",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, step_name),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "absolute_time",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED64,
-    offsetof(GIm__ImChannelParam, has_absolute_time),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, absolute_time),
     NULL,
     NULL,
@@ -6560,9 +6560,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "relative_time",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED64,
-    offsetof(GIm__ImChannelParam, has_relative_time),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, relative_time),
     NULL,
     NULL,
@@ -6584,9 +6584,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "set_voltage",
     16,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_set_voltage),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, set_voltage),
     NULL,
     NULL,
@@ -6596,9 +6596,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "set_current",
     17,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_set_current),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, set_current),
     NULL,
     NULL,
@@ -6608,9 +6608,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "set_power",
     18,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_set_power),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, set_power),
     NULL,
     NULL,
@@ -6620,9 +6620,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "actual_current",
     19,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_actual_current),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, actual_current),
     NULL,
     NULL,
@@ -6632,9 +6632,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "capacity",
     20,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_DOUBLE,
-    offsetof(GIm__ImChannelParam, has_capacity),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, capacity),
     NULL,
     NULL,
@@ -6644,9 +6644,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "voltage_total",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_voltage_total),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, voltage_total),
     NULL,
     NULL,
@@ -6656,9 +6656,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "ear_voltage",
     22,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_ear_voltage),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, ear_voltage),
     NULL,
     NULL,
@@ -6668,9 +6668,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "port_voltage",
     23,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_port_voltage),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, port_voltage),
     NULL,
     NULL,
@@ -6680,9 +6680,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "aux_tmp_max",
     24,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_aux_tmp_max),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, aux_tmp_max),
     NULL,
     NULL,
@@ -6692,9 +6692,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "aux_tmp_min",
     25,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_aux_tmp_min),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, aux_tmp_min),
     NULL,
     NULL,
@@ -6704,9 +6704,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "aux_voltage_diff",
     26,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_aux_voltage_diff),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, aux_voltage_diff),
     NULL,
     NULL,
@@ -6716,9 +6716,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "aux_tmp_diff",
     27,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_aux_tmp_diff),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, aux_tmp_diff),
     NULL,
     NULL,
@@ -6728,9 +6728,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "aux_voltage_total",
     28,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_aux_voltage_total),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, aux_voltage_total),
     NULL,
     NULL,
@@ -6740,9 +6740,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "negative_pressure",
     29,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_negative_pressure),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, negative_pressure),
     NULL,
     NULL,
@@ -6764,9 +6764,9 @@ static const ProtobufCFieldDescriptor g_im__im_channel_param__field_descriptors[
   {
     "external_pressure",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImChannelParam, has_external_pressure),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImChannelParam, external_pressure),
     NULL,
     NULL,
@@ -6828,9 +6828,9 @@ static const ProtobufCFieldDescriptor g_im__im_cell_param__field_descriptors[8] 
   {
     "cell_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SINT32,
-    offsetof(GIm__ImCellParam, has_cell_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCellParam, cell_id),
     NULL,
     NULL,
@@ -6840,9 +6840,9 @@ static const ProtobufCFieldDescriptor g_im__im_cell_param__field_descriptors[8] 
   {
     "actual_voltage",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImCellParam, has_actual_voltage),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCellParam, actual_voltage),
     NULL,
     NULL,
@@ -6852,9 +6852,9 @@ static const ProtobufCFieldDescriptor g_im__im_cell_param__field_descriptors[8] 
   {
     "actual_power",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImCellParam, has_actual_power),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCellParam, actual_power),
     NULL,
     NULL,
@@ -6864,9 +6864,9 @@ static const ProtobufCFieldDescriptor g_im__im_cell_param__field_descriptors[8] 
   {
     "temperature",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImCellParam, has_temperature),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCellParam, temperature),
     NULL,
     NULL,
@@ -6876,9 +6876,9 @@ static const ProtobufCFieldDescriptor g_im__im_cell_param__field_descriptors[8] 
   {
     "energy",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_DOUBLE,
-    offsetof(GIm__ImCellParam, has_energy),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCellParam, energy),
     NULL,
     NULL,
@@ -6888,9 +6888,9 @@ static const ProtobufCFieldDescriptor g_im__im_cell_param__field_descriptors[8] 
   {
     "ear_voltage",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImCellParam, has_ear_voltage),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCellParam, ear_voltage),
     NULL,
     NULL,
@@ -6900,9 +6900,9 @@ static const ProtobufCFieldDescriptor g_im__im_cell_param__field_descriptors[8] 
   {
     "port_voltage",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImCellParam, has_port_voltage),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImCellParam, port_voltage),
     NULL,
     NULL,
@@ -6957,7 +6957,7 @@ static const ProtobufCFieldDescriptor g_im__im_ui_data__field_descriptors[2] =
   {
     "head",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImUiData, head),
@@ -7008,9 +7008,9 @@ static const ProtobufCFieldDescriptor g_im__im_ui_data_response__field_descripto
   {
     "result",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImUiDataResponse, has_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImUiDataResponse, result),
     NULL,
     NULL,
@@ -7046,9 +7046,9 @@ static const ProtobufCFieldDescriptor g_im__im_ajust_request__field_descriptors[
   {
     "channel_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImAjustRequest, has_channel_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAjustRequest, channel_id),
     NULL,
     NULL,
@@ -7058,9 +7058,9 @@ static const ProtobufCFieldDescriptor g_im__im_ajust_request__field_descriptors[
   {
     "ajust_type",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImAjustRequest, has_ajust_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAjustRequest, ajust_type),
     NULL,
     NULL,
@@ -7070,9 +7070,9 @@ static const ProtobufCFieldDescriptor g_im__im_ajust_request__field_descriptors[
   {
     "load_voltage",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImAjustRequest, has_load_voltage),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAjustRequest, load_voltage),
     NULL,
     NULL,
@@ -7082,9 +7082,9 @@ static const ProtobufCFieldDescriptor g_im__im_ajust_request__field_descriptors[
   {
     "load_current",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImAjustRequest, has_load_current),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAjustRequest, load_current),
     NULL,
     NULL,
@@ -7094,9 +7094,9 @@ static const ProtobufCFieldDescriptor g_im__im_ajust_request__field_descriptors[
   {
     "relay_time",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImAjustRequest, has_relay_time),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAjustRequest, relay_time),
     NULL,
     NULL,
@@ -7106,9 +7106,9 @@ static const ProtobufCFieldDescriptor g_im__im_ajust_request__field_descriptors[
   {
     "power_mode",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImAjustRequest, has_power_mode),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAjustRequest, power_mode),
     &g_im__adjust_power_mode__descriptor,
     NULL,
@@ -7149,9 +7149,9 @@ static const ProtobufCFieldDescriptor g_im__im_ajust_response__field_descriptors
   {
     "channel_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImAjustResponse, has_channel_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAjustResponse, channel_id),
     NULL,
     NULL,
@@ -7161,9 +7161,9 @@ static const ProtobufCFieldDescriptor g_im__im_ajust_response__field_descriptors
   {
     "ajust_type",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImAjustResponse, has_ajust_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAjustResponse, ajust_type),
     NULL,
     NULL,
@@ -7173,9 +7173,9 @@ static const ProtobufCFieldDescriptor g_im__im_ajust_response__field_descriptors
   {
     "result",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImAjustResponse, has_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAjustResponse, result),
     &g_im__cmd_result__descriptor,
     NULL,
@@ -7185,9 +7185,9 @@ static const ProtobufCFieldDescriptor g_im__im_ajust_response__field_descriptors
   {
     "power_mode",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImAjustResponse, has_power_mode),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImAjustResponse, power_mode),
     &g_im__adjust_power_mode__descriptor,
     NULL,
@@ -7226,9 +7226,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_request__field_descriptors[
   {
     "channel_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDebugRequest, has_channel_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugRequest, channel_id),
     NULL,
     NULL,
@@ -7238,9 +7238,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_request__field_descriptors[
   {
     "read_type",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDebugRequest, has_read_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugRequest, read_type),
     NULL,
     NULL,
@@ -7250,9 +7250,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_request__field_descriptors[
   {
     "power_mode",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImDebugRequest, has_power_mode),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugRequest, power_mode),
     &g_im__adjust_power_mode__descriptor,
     NULL,
@@ -7290,9 +7290,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
   {
     "channel_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDebugResponse, has_channel_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugResponse, channel_id),
     NULL,
     NULL,
@@ -7302,9 +7302,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
   {
     "read_type",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDebugResponse, has_read_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugResponse, read_type),
     NULL,
     NULL,
@@ -7314,9 +7314,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
   {
     "result",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImDebugResponse, has_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugResponse, result),
     &g_im__cmd_result__descriptor,
     NULL,
@@ -7326,9 +7326,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
   {
     "vnum",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDebugResponse, has_vnum),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugResponse, vnum),
     NULL,
     NULL,
@@ -7338,9 +7338,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
   {
     "inum",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDebugResponse, has_inum),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugResponse, inum),
     NULL,
     NULL,
@@ -7350,9 +7350,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
   {
     "tnum",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImDebugResponse, has_tnum),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugResponse, tnum),
     NULL,
     NULL,
@@ -7368,7 +7368,7 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
     offsetof(GIm__ImDebugResponse, voltages),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
@@ -7380,7 +7380,7 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
     offsetof(GIm__ImDebugResponse, currents),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
@@ -7392,15 +7392,15 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
     offsetof(GIm__ImDebugResponse, temperatures),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dc_dc_input_voltage",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImDebugResponse, has_dc_dc_input_voltage),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugResponse, dc_dc_input_voltage),
     NULL,
     NULL,
@@ -7410,9 +7410,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
   {
     "dc_dc_output_voltage",
     15,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImDebugResponse, has_dc_dc_output_voltage),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugResponse, dc_dc_output_voltage),
     NULL,
     NULL,
@@ -7422,9 +7422,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
   {
     "dc_dc_temperature",
     16,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImDebugResponse, has_dc_dc_temperature),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugResponse, dc_dc_temperature),
     NULL,
     NULL,
@@ -7434,9 +7434,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
   {
     "power_mode",
     17,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImDebugResponse, has_power_mode),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugResponse, power_mode),
     &g_im__adjust_power_mode__descriptor,
     NULL,
@@ -7446,9 +7446,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
   {
     "low_warm_type",
     18,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImDebugResponse, has_low_warm_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugResponse, low_warm_type),
     &g_im__lower_machine_warn_type__descriptor,
     NULL,
@@ -7458,9 +7458,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
   {
     "channel_fault_type",
     19,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImDebugResponse, has_channel_fault_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugResponse, channel_fault_type),
     &g_im__lower_machine_channel_fault_type__descriptor,
     NULL,
@@ -7470,9 +7470,9 @@ static const ProtobufCFieldDescriptor g_im__im_debug_response__field_descriptors
   {
     "arm_fault_type",
     20,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImDebugResponse, has_arm_fault_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImDebugResponse, arm_fault_type),
     &g_im__lower_machine_arm_fault_type__descriptor,
     NULL,
@@ -7523,9 +7523,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_request__field_descriptors
   {
     "channel_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImEepromRequest, has_channel_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromRequest, channel_id),
     NULL,
     NULL,
@@ -7535,9 +7535,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_request__field_descriptors
   {
     "eeprom_type",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImEepromRequest, has_eeprom_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromRequest, eeprom_type),
     &g_im__im_eeprom_type__descriptor,
     NULL,
@@ -7547,9 +7547,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_request__field_descriptors
   {
     "fator_type",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImEepromRequest, has_fator_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromRequest, fator_type),
     &g_im__im_fator_type__descriptor,
     NULL,
@@ -7559,9 +7559,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_request__field_descriptors
   {
     "fator_option",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImEepromRequest, has_fator_option),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromRequest, fator_option),
     &g_im__im_fator_option__descriptor,
     NULL,
@@ -7577,7 +7577,7 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_request__field_descriptors
     offsetof(GIm__ImEepromRequest, k_fators),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
@@ -7589,15 +7589,15 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_request__field_descriptors
     offsetof(GIm__ImEepromRequest, b_fators),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "power_mode",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImEepromRequest, has_power_mode),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromRequest, power_mode),
     &g_im__adjust_power_mode__descriptor,
     NULL,
@@ -7639,9 +7639,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_read_response__field_descr
   {
     "channel_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImEepromReadResponse, has_channel_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromReadResponse, channel_id),
     NULL,
     NULL,
@@ -7651,9 +7651,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_read_response__field_descr
   {
     "eeprom_type",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImEepromReadResponse, has_eeprom_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromReadResponse, eeprom_type),
     &g_im__im_eeprom_type__descriptor,
     NULL,
@@ -7663,9 +7663,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_read_response__field_descr
   {
     "result",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImEepromReadResponse, has_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromReadResponse, result),
     &g_im__cmd_result__descriptor,
     NULL,
@@ -7675,9 +7675,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_read_response__field_descr
   {
     "fator_type",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImEepromReadResponse, has_fator_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromReadResponse, fator_type),
     &g_im__im_fator_type__descriptor,
     NULL,
@@ -7687,9 +7687,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_read_response__field_descr
   {
     "fator_option",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImEepromReadResponse, has_fator_option),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromReadResponse, fator_option),
     &g_im__im_fator_option__descriptor,
     NULL,
@@ -7705,7 +7705,7 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_read_response__field_descr
     offsetof(GIm__ImEepromReadResponse, k_fators),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
@@ -7717,15 +7717,15 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_read_response__field_descr
     offsetof(GIm__ImEepromReadResponse, b_fators),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "v_max",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImEepromReadResponse, has_v_max),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromReadResponse, v_max),
     NULL,
     NULL,
@@ -7735,9 +7735,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_read_response__field_descr
   {
     "i_max",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImEepromReadResponse, has_i_max),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromReadResponse, i_max),
     NULL,
     NULL,
@@ -7747,9 +7747,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_read_response__field_descr
   {
     "p_max",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImEepromReadResponse, has_p_max),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromReadResponse, p_max),
     NULL,
     NULL,
@@ -7759,9 +7759,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_read_response__field_descr
   {
     "power_mode",
     15,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImEepromReadResponse, has_power_mode),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromReadResponse, power_mode),
     &g_im__adjust_power_mode__descriptor,
     NULL,
@@ -7807,9 +7807,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_write_response__field_desc
   {
     "channel_id",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImEepromWriteResponse, has_channel_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromWriteResponse, channel_id),
     NULL,
     NULL,
@@ -7819,9 +7819,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_write_response__field_desc
   {
     "eeprom_type",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImEepromWriteResponse, has_eeprom_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromWriteResponse, eeprom_type),
     &g_im__im_eeprom_type__descriptor,
     NULL,
@@ -7831,9 +7831,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_write_response__field_desc
   {
     "power_mode",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImEepromWriteResponse, has_power_mode),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromWriteResponse, power_mode),
     &g_im__adjust_power_mode__descriptor,
     NULL,
@@ -7843,9 +7843,9 @@ static const ProtobufCFieldDescriptor g_im__im_eeprom_write_response__field_desc
   {
     "result",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImEepromWriteResponse, has_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImEepromWriteResponse, result),
     &g_im__cmd_result__descriptor,
     NULL,
@@ -7884,9 +7884,9 @@ static const ProtobufCFieldDescriptor g_im__negative_pressure_param__field_descr
   {
     "k_negative_pressure",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__NegativePressureParam, has_k_negative_pressure),
+    0,   /* quantifier_offset */
     offsetof(GIm__NegativePressureParam, k_negative_pressure),
     NULL,
     NULL,
@@ -7896,9 +7896,9 @@ static const ProtobufCFieldDescriptor g_im__negative_pressure_param__field_descr
   {
     "k_negative_pressure_limit",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__NegativePressureParam, has_k_negative_pressure_limit),
+    0,   /* quantifier_offset */
     offsetof(GIm__NegativePressureParam, k_negative_pressure_limit),
     NULL,
     NULL,
@@ -7908,9 +7908,9 @@ static const ProtobufCFieldDescriptor g_im__negative_pressure_param__field_descr
   {
     "k_negative_pressure_rate",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__NegativePressureParam, has_k_negative_pressure_rate),
+    0,   /* quantifier_offset */
     offsetof(GIm__NegativePressureParam, k_negative_pressure_rate),
     NULL,
     NULL,
@@ -7920,9 +7920,9 @@ static const ProtobufCFieldDescriptor g_im__negative_pressure_param__field_descr
   {
     "k_wait_seconds",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__NegativePressureParam, has_k_wait_seconds),
+    0,   /* quantifier_offset */
     offsetof(GIm__NegativePressureParam, k_wait_seconds),
     NULL,
     NULL,
@@ -7932,9 +7932,9 @@ static const ProtobufCFieldDescriptor g_im__negative_pressure_param__field_descr
   {
     "k_negative_pressure_timeout_seconds",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__NegativePressureParam, has_k_negative_pressure_timeout_seconds),
+    0,   /* quantifier_offset */
     offsetof(GIm__NegativePressureParam, k_negative_pressure_timeout_seconds),
     NULL,
     NULL,
@@ -7944,9 +7944,9 @@ static const ProtobufCFieldDescriptor g_im__negative_pressure_param__field_descr
   {
     "k_leakage_jugge_seconds",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__NegativePressureParam, has_k_leakage_jugge_seconds),
+    0,   /* quantifier_offset */
     offsetof(GIm__NegativePressureParam, k_leakage_jugge_seconds),
     NULL,
     NULL,
@@ -7987,9 +7987,9 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_request__field_
   {
     "stock_no",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImNegativePressureRequest, has_stock_no),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureRequest, stock_no),
     NULL,
     NULL,
@@ -7999,9 +7999,9 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_request__field_
   {
     "cmd_type",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImNegativePressureRequest, has_cmd_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureRequest, cmd_type),
     &g_im__negative_pressure_cmd_type__descriptor,
     NULL,
@@ -8011,7 +8011,7 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_request__field_
   {
     "cmd_param",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureRequest, cmd_param),
@@ -8023,9 +8023,9 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_request__field_
   {
     "valve_type",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImNegativePressureRequest, has_valve_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureRequest, valve_type),
     &g_im__negative_pressure_vacuum_valve_type__descriptor,
     NULL,
@@ -8064,9 +8064,9 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_response__field
   {
     "stock_no",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImNegativePressureResponse, has_stock_no),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureResponse, stock_no),
     NULL,
     NULL,
@@ -8076,9 +8076,9 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_response__field
   {
     "cmd_type",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImNegativePressureResponse, has_cmd_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureResponse, cmd_type),
     &g_im__negative_pressure_cmd_type__descriptor,
     NULL,
@@ -8088,9 +8088,9 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_response__field
   {
     "k_negative_pressure",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImNegativePressureResponse, has_k_negative_pressure),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureResponse, k_negative_pressure),
     NULL,
     NULL,
@@ -8100,9 +8100,9 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_response__field
   {
     "result",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImNegativePressureResponse, has_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureResponse, result),
     &g_im__cmd_result__descriptor,
     NULL,
@@ -8112,9 +8112,9 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_response__field
   {
     "op_res",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImNegativePressureResponse, has_op_res),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureResponse, op_res),
     &g_im__negative_pressure_op_res__descriptor,
     NULL,
@@ -8124,9 +8124,9 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_response__field
   {
     "leakage_rate",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImNegativePressureResponse, has_leakage_rate),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureResponse, leakage_rate),
     NULL,
     NULL,
@@ -8136,9 +8136,9 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_response__field
   {
     "vacuum_neg_pressure",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImNegativePressureResponse, has_vacuum_neg_pressure),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureResponse, vacuum_neg_pressure),
     NULL,
     NULL,
@@ -8148,9 +8148,9 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_response__field
   {
     "steady_neg_pressure",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImNegativePressureResponse, has_steady_neg_pressure),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureResponse, steady_neg_pressure),
     NULL,
     NULL,
@@ -8160,9 +8160,9 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_response__field
   {
     "first_neg_pressure",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImNegativePressureResponse, has_first_neg_pressure),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureResponse, first_neg_pressure),
     NULL,
     NULL,
@@ -8172,9 +8172,9 @@ static const ProtobufCFieldDescriptor g_im__im_negative_pressure_response__field
   {
     "second_neg_pressure",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(GIm__ImNegativePressureResponse, has_second_neg_pressure),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImNegativePressureResponse, second_neg_pressure),
     NULL,
     NULL,
@@ -8219,9 +8219,9 @@ static const ProtobufCFieldDescriptor g_im__im_version_query_request__field_desc
   {
     "power_mode",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImVersionQueryRequest, has_power_mode),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImVersionQueryRequest, power_mode),
     &g_im__adjust_power_mode__descriptor,
     NULL,
@@ -8231,9 +8231,9 @@ static const ProtobufCFieldDescriptor g_im__im_version_query_request__field_desc
   {
     "channel_id",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImVersionQueryRequest, has_channel_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImVersionQueryRequest, channel_id),
     NULL,
     NULL,
@@ -8243,9 +8243,9 @@ static const ProtobufCFieldDescriptor g_im__im_version_query_request__field_desc
   {
     "chip_type",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImVersionQueryRequest, has_chip_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImVersionQueryRequest, chip_type),
     &g_im__version_query_chip_type__descriptor,
     NULL,
@@ -8255,9 +8255,9 @@ static const ProtobufCFieldDescriptor g_im__im_version_query_request__field_desc
   {
     "query_type",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImVersionQueryRequest, has_query_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImVersionQueryRequest, query_type),
     &g_im__version_query_type__descriptor,
     NULL,
@@ -8296,9 +8296,9 @@ static const ProtobufCFieldDescriptor g_im__im_version_query_response__field_des
   {
     "power_mode",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImVersionQueryResponse, has_power_mode),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImVersionQueryResponse, power_mode),
     &g_im__adjust_power_mode__descriptor,
     NULL,
@@ -8308,9 +8308,9 @@ static const ProtobufCFieldDescriptor g_im__im_version_query_response__field_des
   {
     "channel_id",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_SFIXED32,
-    offsetof(GIm__ImVersionQueryResponse, has_channel_id),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImVersionQueryResponse, channel_id),
     NULL,
     NULL,
@@ -8320,9 +8320,9 @@ static const ProtobufCFieldDescriptor g_im__im_version_query_response__field_des
   {
     "chip_type",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImVersionQueryResponse, has_chip_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImVersionQueryResponse, chip_type),
     &g_im__version_query_chip_type__descriptor,
     NULL,
@@ -8332,9 +8332,9 @@ static const ProtobufCFieldDescriptor g_im__im_version_query_response__field_des
   {
     "query_type",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImVersionQueryResponse, has_query_type),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImVersionQueryResponse, query_type),
     &g_im__version_query_type__descriptor,
     NULL,
@@ -8344,9 +8344,9 @@ static const ProtobufCFieldDescriptor g_im__im_version_query_response__field_des
   {
     "result",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(GIm__ImVersionQueryResponse, has_result),
+    0,   /* quantifier_offset */
     offsetof(GIm__ImVersionQueryResponse, result),
     &g_im__cmd_result__descriptor,
     NULL,
@@ -8356,24 +8356,24 @@ static const ProtobufCFieldDescriptor g_im__im_version_query_response__field_des
   {
     "app_version",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImVersionQueryResponse, app_version),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "app_name",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(GIm__ImVersionQueryResponse, app_name),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -8407,3426 +8407,6 @@ const ProtobufCMessageDescriptor g_im__im_version_query_response__descriptor =
   (ProtobufCMessageInit) g_im__im_version_query_response__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-
-size_t
-g_im__im_cmd_head_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_cmd_head__get_packed_size((GIm__ImCmdHead *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_cmd_head__pack((GIm__ImCmdHead *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_cmd_head_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImCmdHead *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_cmd_head__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_cmd_head_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_cmd_head__free_unpacked((GIm__ImCmdHead *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_auth_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_auth__get_packed_size((GIm__ImAuth *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_auth__pack((GIm__ImAuth *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_auth_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImAuth *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_auth__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_auth_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_auth__free_unpacked((GIm__ImAuth *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_data_store4unit_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_data_store4unit__get_packed_size((GIm__ImDataStore4unit *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_data_store4unit__pack((GIm__ImDataStore4unit *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_data_store4unit_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImDataStore4unit *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_data_store4unit__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_data_store4unit_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_data_store4unit__free_unpacked((GIm__ImDataStore4unit *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_data_store4alarm_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_data_store4alarm__get_packed_size((GIm__ImDataStore4alarm *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_data_store4alarm__pack((GIm__ImDataStore4alarm *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_data_store4alarm_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImDataStore4alarm *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_data_store4alarm__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_data_store4alarm_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_data_store4alarm__free_unpacked((GIm__ImDataStore4alarm *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__smoke_item_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__smoke_item__get_packed_size((GIm__SmokeItem *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__smoke_item__pack((GIm__SmokeItem *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__smoke_item_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__SmokeItem *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__smoke_item__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__smoke_item_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__smoke_item__free_unpacked((GIm__SmokeItem *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__smoke_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__smoke_data__get_packed_size((GIm__SmokeData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__smoke_data__pack((GIm__SmokeData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__smoke_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__SmokeData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__smoke_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__smoke_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__smoke_data__free_unpacked((GIm__SmokeData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_co_item_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_co_item__get_packed_size((GIm__ImCoItem *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_co_item__pack((GIm__ImCoItem *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_co_item_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImCoItem *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_co_item__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_co_item_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_co_item__free_unpacked((GIm__ImCoItem *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_co_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_co_data__get_packed_size((GIm__ImCoData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_co_data__pack((GIm__ImCoData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_co_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImCoData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_co_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_co_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_co_data__free_unpacked((GIm__ImCoData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_fan__item_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_fan__item__get_packed_size((GIm__ImFanItem *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_fan__item__pack((GIm__ImFanItem *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_fan__item_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImFanItem *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_fan__item__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_fan__item_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_fan__item__free_unpacked((GIm__ImFanItem *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_fan_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_fan_data__get_packed_size((GIm__ImFanData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_fan_data__pack((GIm__ImFanData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_fan_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImFanData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_fan_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_fan_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_fan_data__free_unpacked((GIm__ImFanData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_temp_item_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_temp_item__get_packed_size((GIm__ImTempItem *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_temp_item__pack((GIm__ImTempItem *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_temp_item_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImTempItem *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_temp_item__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_temp_item_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_temp_item__free_unpacked((GIm__ImTempItem *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__env_temp_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__env_temp_data__get_packed_size((GIm__EnvTempData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__env_temp_data__pack((GIm__EnvTempData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__env_temp_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__EnvTempData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__env_temp_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__env_temp_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__env_temp_data__free_unpacked((GIm__EnvTempData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__negativepressure_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__negativepressure_data__get_packed_size((GIm__NegativepressureData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__negativepressure_data__pack((GIm__NegativepressureData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__negativepressure_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__NegativepressureData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__negativepressure_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__negativepressure_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__negativepressure_data__free_unpacked((GIm__NegativepressureData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__alarm_param_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__alarm_param_data__get_packed_size((GIm__AlarmParamData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__alarm_param_data__pack((GIm__AlarmParamData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__alarm_param_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__AlarmParamData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__alarm_param_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__alarm_param_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__alarm_param_data__free_unpacked((GIm__AlarmParamData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__alarm_set_param_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__alarm_set_param_data__get_packed_size((GIm__AlarmSetParamData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__alarm_set_param_data__pack((GIm__AlarmSetParamData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__alarm_set_param_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__AlarmSetParamData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__alarm_set_param_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__alarm_set_param_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__alarm_set_param_data__free_unpacked((GIm__AlarmSetParamData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__serucrity_alarm_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__serucrity_alarm_data__get_packed_size((GIm__SerucrityAlarmData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__serucrity_alarm_data__pack((GIm__SerucrityAlarmData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__serucrity_alarm_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__SerucrityAlarmData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__serucrity_alarm_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__serucrity_alarm_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__serucrity_alarm_data__free_unpacked((GIm__SerucrityAlarmData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__serucrity_combination_alarm_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__serucrity_combination_alarm_data__get_packed_size((GIm__SerucrityCombinationAlarmData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__serucrity_combination_alarm_data__pack((GIm__SerucrityCombinationAlarmData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__serucrity_combination_alarm_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__SerucrityCombinationAlarmData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__serucrity_combination_alarm_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__serucrity_combination_alarm_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__serucrity_combination_alarm_data__free_unpacked((GIm__SerucrityCombinationAlarmData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__lowercomputer_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__lowercomputer_data__get_packed_size((GIm__LowercomputerData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__lowercomputer_data__pack((GIm__LowercomputerData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__lowercomputer_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__LowercomputerData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__lowercomputer_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__lowercomputer_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__lowercomputer_data__free_unpacked((GIm__LowercomputerData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__plc_failure_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__plc_failure_data__get_packed_size((GIm__PlcFailureData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__plc_failure_data__pack((GIm__PlcFailureData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__plc_failure_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__PlcFailureData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__plc_failure_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__plc_failure_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__plc_failure_data__free_unpacked((GIm__PlcFailureData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_stock_security_info_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_stock_security_info__get_packed_size((GIm__ImStockSecurityInfo *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_stock_security_info__pack((GIm__ImStockSecurityInfo *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_stock_security_info_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImStockSecurityInfo *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_stock_security_info__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_stock_security_info_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_stock_security_info__free_unpacked((GIm__ImStockSecurityInfo *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_security_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_security_data__get_packed_size((GIm__ImSecurityData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_security_data__pack((GIm__ImSecurityData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_security_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImSecurityData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_security_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_security_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_security_data__free_unpacked((GIm__ImSecurityData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_device_update_info_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_device_update_info__get_packed_size((GIm__ImDeviceUpdateInfo *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_device_update_info__pack((GIm__ImDeviceUpdateInfo *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_device_update_info_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImDeviceUpdateInfo *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_device_update_info__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_device_update_info_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_device_update_info__free_unpacked((GIm__ImDeviceUpdateInfo *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_device_passthrough_response_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_device_passthrough_response__get_packed_size((GIm__ImDevicePassthroughResponse *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_device_passthrough_response__pack((GIm__ImDevicePassthroughResponse *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_device_passthrough_response_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImDevicePassthroughResponse *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_device_passthrough_response__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_device_passthrough_response_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_device_passthrough_response__free_unpacked((GIm__ImDevicePassthroughResponse *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_device_upgrade_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_device_upgrade_data__get_packed_size((GIm__ImDeviceUpgradeData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_device_upgrade_data__pack((GIm__ImDeviceUpgradeData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_device_upgrade_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImDeviceUpgradeData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_device_upgrade_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_device_upgrade_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_device_upgrade_data__free_unpacked((GIm__ImDeviceUpgradeData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_device_upgrad_notify_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_device_upgrad_notify__get_packed_size((GIm__ImDeviceUpgradNotify *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_device_upgrad_notify__pack((GIm__ImDeviceUpgradNotify *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_device_upgrad_notify_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImDeviceUpgradNotify *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_device_upgrad_notify__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_device_upgrad_notify_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_device_upgrad_notify__free_unpacked((GIm__ImDeviceUpgradNotify *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_netcard_param_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_netcard_param__get_packed_size((GIm__ImNetcardParam *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_netcard_param__pack((GIm__ImNetcardParam *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_netcard_param_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImNetcardParam *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_netcard_param__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_netcard_param_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_netcard_param__free_unpacked((GIm__ImNetcardParam *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_master_channel_ret_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_master_channel_ret__get_packed_size((GIm__ImMasterChannelRet *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_master_channel_ret__pack((GIm__ImMasterChannelRet *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_master_channel_ret_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImMasterChannelRet *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_master_channel_ret__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_master_channel_ret_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_master_channel_ret__free_unpacked((GIm__ImMasterChannelRet *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_step_jump_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_step_jump__get_packed_size((GIm__ImStepJump *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_step_jump__pack((GIm__ImStepJump *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_step_jump_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImStepJump *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_step_jump__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_step_jump_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_step_jump__free_unpacked((GIm__ImStepJump *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_channel_continue_ret_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_channel_continue_ret__get_packed_size((GIm__ImChannelContinueRet *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_channel_continue_ret__pack((GIm__ImChannelContinueRet *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_channel_continue_ret_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImChannelContinueRet *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_channel_continue_ret__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_channel_continue_ret_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_channel_continue_ret__free_unpacked((GIm__ImChannelContinueRet *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_channel_enable_byip_result_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_channel_enable_byip_result__get_packed_size((GIm__ImChannelEnableByipResult *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_channel_enable_byip_result__pack((GIm__ImChannelEnableByipResult *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_channel_enable_byip_result_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImChannelEnableByipResult *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_channel_enable_byip_result__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_channel_enable_byip_result_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_channel_enable_byip_result__free_unpacked((GIm__ImChannelEnableByipResult *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_channel_appoint_stop_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_channel_appoint_stop__get_packed_size((GIm__ImChannelAppointStop *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_channel_appoint_stop__pack((GIm__ImChannelAppointStop *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_channel_appoint_stop_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImChannelAppointStop *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_channel_appoint_stop__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_channel_appoint_stop_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_channel_appoint_stop__free_unpacked((GIm__ImChannelAppointStop *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_security_stop_by_stock_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_security_stop_by_stock__get_packed_size((GIm__ImSecurityStopByStock *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_security_stop_by_stock__pack((GIm__ImSecurityStopByStock *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_security_stop_by_stock_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImSecurityStopByStock *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_security_stop_by_stock__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_security_stop_by_stock_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_security_stop_by_stock__free_unpacked((GIm__ImSecurityStopByStock *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_channel_test_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_channel_test__get_packed_size((GIm__ImChannelTest *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_channel_test__pack((GIm__ImChannelTest *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_channel_test_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImChannelTest *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_channel_test__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_channel_test_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_channel_test__free_unpacked((GIm__ImChannelTest *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_channel_clear_warn_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_channel_clear_warn__get_packed_size((GIm__ImChannelClearWarn *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_channel_clear_warn__pack((GIm__ImChannelClearWarn *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_channel_clear_warn_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImChannelClearWarn *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_channel_clear_warn__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_channel_clear_warn_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_channel_clear_warn__free_unpacked((GIm__ImChannelClearWarn *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_security_clear_warn_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_security_clear_warn__get_packed_size((GIm__ImSecurityClearWarn *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_security_clear_warn__pack((GIm__ImSecurityClearWarn *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_security_clear_warn_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImSecurityClearWarn *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_security_clear_warn__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_security_clear_warn_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_security_clear_warn__free_unpacked((GIm__ImSecurityClearWarn *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_display_time_protection_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_display_time_protection__get_packed_size((GIm__ImDisplayTimeProtection *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_display_time_protection__pack((GIm__ImDisplayTimeProtection *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_display_time_protection_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImDisplayTimeProtection *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_display_time_protection__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_display_time_protection_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_display_time_protection__free_unpacked((GIm__ImDisplayTimeProtection *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_soft_update_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_soft_update__get_packed_size((GIm__ImSoftUpdate *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_soft_update__pack((GIm__ImSoftUpdate *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_soft_update_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImSoftUpdate *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_soft_update__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_soft_update_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_soft_update__free_unpacked((GIm__ImSoftUpdate *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_device_update_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_device_update__get_packed_size((GIm__ImDeviceUpdate *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_device_update__pack((GIm__ImDeviceUpdate *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_device_update_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImDeviceUpdate *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_device_update__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_device_update_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_device_update__free_unpacked((GIm__ImDeviceUpdate *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_device_passthrough_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_device_passthrough__get_packed_size((GIm__ImDevicePassthrough *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_device_passthrough__pack((GIm__ImDevicePassthrough *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_device_passthrough_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImDevicePassthrough *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_device_passthrough__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_device_passthrough_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_device_passthrough__free_unpacked((GIm__ImDevicePassthrough *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_cmd_request_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_cmd_request__get_packed_size((GIm__ImCmdRequest *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_cmd_request__pack((GIm__ImCmdRequest *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_cmd_request_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImCmdRequest *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_cmd_request__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_cmd_request_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_cmd_request__free_unpacked((GIm__ImCmdRequest *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__execute_serucrity_result_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__execute_serucrity_result__get_packed_size((GIm__ExecuteSerucrityResult *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__execute_serucrity_result__pack((GIm__ExecuteSerucrityResult *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__execute_serucrity_result_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ExecuteSerucrityResult *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__execute_serucrity_result__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__execute_serucrity_result_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__execute_serucrity_result__free_unpacked((GIm__ExecuteSerucrityResult *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_cmd_response_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_cmd_response__get_packed_size((GIm__ImCmdResponse *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_cmd_response__pack((GIm__ImCmdResponse *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_cmd_response_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImCmdResponse *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_cmd_response__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_cmd_response_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_cmd_response__free_unpacked((GIm__ImCmdResponse *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_chnnel_warn_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_chnnel_warn__get_packed_size((GIm__ImChnnelWarn *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_chnnel_warn__pack((GIm__ImChnnelWarn *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_chnnel_warn_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImChnnelWarn *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_chnnel_warn__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_chnnel_warn_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_chnnel_warn__free_unpacked((GIm__ImChnnelWarn *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_extern_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_extern_data__get_packed_size((GIm__ImExternData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_extern_data__pack((GIm__ImExternData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_extern_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImExternData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_extern_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_extern_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_extern_data__free_unpacked((GIm__ImExternData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_channel_param_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_channel_param__get_packed_size((GIm__ImChannelParam *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_channel_param__pack((GIm__ImChannelParam *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_channel_param_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImChannelParam *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_channel_param__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_channel_param_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_channel_param__free_unpacked((GIm__ImChannelParam *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_cell_param_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_cell_param__get_packed_size((GIm__ImCellParam *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_cell_param__pack((GIm__ImCellParam *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_cell_param_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImCellParam *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_cell_param__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_cell_param_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_cell_param__free_unpacked((GIm__ImCellParam *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_ui_data_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_ui_data__get_packed_size((GIm__ImUiData *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_ui_data__pack((GIm__ImUiData *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_ui_data_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImUiData *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_ui_data__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_ui_data_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_ui_data__free_unpacked((GIm__ImUiData *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_ui_data_response_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_ui_data_response__get_packed_size((GIm__ImUiDataResponse *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_ui_data_response__pack((GIm__ImUiDataResponse *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_ui_data_response_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImUiDataResponse *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_ui_data_response__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_ui_data_response_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_ui_data_response__free_unpacked((GIm__ImUiDataResponse *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_ajust_request_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_ajust_request__get_packed_size((GIm__ImAjustRequest *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_ajust_request__pack((GIm__ImAjustRequest *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_ajust_request_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImAjustRequest *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_ajust_request__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_ajust_request_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_ajust_request__free_unpacked((GIm__ImAjustRequest *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_ajust_response_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_ajust_response__get_packed_size((GIm__ImAjustResponse *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_ajust_response__pack((GIm__ImAjustResponse *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_ajust_response_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImAjustResponse *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_ajust_response__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_ajust_response_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_ajust_response__free_unpacked((GIm__ImAjustResponse *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_debug_request_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_debug_request__get_packed_size((GIm__ImDebugRequest *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_debug_request__pack((GIm__ImDebugRequest *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_debug_request_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImDebugRequest *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_debug_request__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_debug_request_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_debug_request__free_unpacked((GIm__ImDebugRequest *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_debug_response_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_debug_response__get_packed_size((GIm__ImDebugResponse *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_debug_response__pack((GIm__ImDebugResponse *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_debug_response_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImDebugResponse *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_debug_response__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_debug_response_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_debug_response__free_unpacked((GIm__ImDebugResponse *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_eeprom_request_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_eeprom_request__get_packed_size((GIm__ImEepromRequest *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_eeprom_request__pack((GIm__ImEepromRequest *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_eeprom_request_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImEepromRequest *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_eeprom_request__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_eeprom_request_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_eeprom_request__free_unpacked((GIm__ImEepromRequest *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_eeprom_read_response_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_eeprom_read_response__get_packed_size((GIm__ImEepromReadResponse *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_eeprom_read_response__pack((GIm__ImEepromReadResponse *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_eeprom_read_response_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImEepromReadResponse *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_eeprom_read_response__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_eeprom_read_response_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_eeprom_read_response__free_unpacked((GIm__ImEepromReadResponse *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_eeprom_write_response_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_eeprom_write_response__get_packed_size((GIm__ImEepromWriteResponse *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_eeprom_write_response__pack((GIm__ImEepromWriteResponse *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_eeprom_write_response_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImEepromWriteResponse *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_eeprom_write_response__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_eeprom_write_response_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_eeprom_write_response__free_unpacked((GIm__ImEepromWriteResponse *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__negative_pressure_param_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__negative_pressure_param__get_packed_size((GIm__NegativePressureParam *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__negative_pressure_param__pack((GIm__NegativePressureParam *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__negative_pressure_param_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__NegativePressureParam *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__negative_pressure_param__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__negative_pressure_param_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__negative_pressure_param__free_unpacked((GIm__NegativePressureParam *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_negative_pressure_request_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_negative_pressure_request__get_packed_size((GIm__ImNegativePressureRequest *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_negative_pressure_request__pack((GIm__ImNegativePressureRequest *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_negative_pressure_request_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImNegativePressureRequest *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_negative_pressure_request__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_negative_pressure_request_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_negative_pressure_request__free_unpacked((GIm__ImNegativePressureRequest *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_negative_pressure_response_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_negative_pressure_response__get_packed_size((GIm__ImNegativePressureResponse *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_negative_pressure_response__pack((GIm__ImNegativePressureResponse *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_negative_pressure_response_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImNegativePressureResponse *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_negative_pressure_response__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_negative_pressure_response_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_negative_pressure_response__free_unpacked((GIm__ImNegativePressureResponse *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_version_query_request_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_version_query_request__get_packed_size((GIm__ImVersionQueryRequest *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_version_query_request__pack((GIm__ImVersionQueryRequest *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_version_query_request_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImVersionQueryRequest *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_version_query_request__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_version_query_request_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_version_query_request__free_unpacked((GIm__ImVersionQueryRequest *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
-
-size_t
-g_im__im_version_query_response_packer (void *input, grpc_byte_buffer **buffer)
-{
-    uint8_t *out;
-    size_t size = g_im__im_version_query_response__get_packed_size((GIm__ImVersionQueryResponse *)input);
-    out = gpr_malloc(sizeof(uint8_t) * size);
-    size_t len = g_im__im_version_query_response__pack((GIm__ImVersionQueryResponse *)input, out);
-    grpc_slice slice = grpc_slice_new(out, len, gpr_free);
-    *buffer = grpc_raw_byte_buffer_create(&slice, 1);
-    grpc_slice_unref(slice);
-    return len;
-}
-
-void *
-g_im__im_version_query_response_unpacker (grpc_c_context_t *context, grpc_byte_buffer *buffer)
-{
-    GIm__ImVersionQueryResponse *h = NULL;
-    if (buffer != NULL) {
-        struct ProtobufCAllocator allocator;
-        grpc_byte_buffer_reader reader;
-        grpc_slice slice;
-        grpc_byte_buffer_reader_init(&reader, buffer);
-        char *buf = NULL;
-        size_t buf_len = 0;
-        while (grpc_byte_buffer_reader_next(&reader, &slice) != 0) {
-            if (buf == NULL) {
-                buf = gpr_malloc(GRPC_SLICE_LENGTH(slice));
-            } else {
-                buf = gpr_realloc(buf, buf_len + GRPC_SLICE_LENGTH(slice));
-            }
-            if (buf == NULL) {
-                grpc_slice_unref(slice);
-                break;
-            }
-            if (memcpy(buf + buf_len, GRPC_SLICE_START_PTR(slice), GRPC_SLICE_LENGTH(slice)) == NULL) {
-                gpr_free(buf);
-                grpc_slice_unref(slice);
-                return NULL;
-            }
-            buf_len += GRPC_SLICE_LENGTH(slice);
-            grpc_slice_unref(slice);
-            if (buf == NULL) break;
-        }
-        h = g_im__im_version_query_response__unpack(grpc_c_get_protobuf_c_allocator(context, &allocator), buf_len, (void *)buf);
-        gpr_free(buf);
-    }
-    return h;
-}
-
-void
-g_im__im_version_query_response_free (grpc_c_context_t *context, void *buf)
-{
-    struct ProtobufCAllocator allocator;
-    if (buf == NULL) return;
-    g_im__im_version_query_response__free_unpacked((GIm__ImVersionQueryResponse *)buf, grpc_c_get_protobuf_c_allocator(context, &allocator));
-}
 static const ProtobufCEnumValue g_im__cmd_type__enum_values_by_number[65] =
 {
   { "BOARDCAST", "G_IM__CMD_TYPE__BOARDCAST", 0 },
@@ -14007,249 +10587,149 @@ const ProtobufCEnumDescriptor g_im__version_query_type__descriptor =
   g_im__version_query_type__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-
-const char *g_im__im_service__methods[] = {
-    "/g_im.imService/im_cmd_call",
-    "/g_im.imService/im_ajust_call",
-    "/g_im.imService/im_debug_call",
-    "/g_im.imService/im_eeprom_read",
-    "/g_im.imService/im_eeprom_write",
-    "/g_im.imService/im_negative_pressure_adjust_call",
-    "/g_im.imService/im_adjust_call_version_query",
+static const ProtobufCMethodDescriptor g_im__im_service__method_descriptors[7] =
+{
+  { "im_cmd_call", &g_im__im_cmd_request__descriptor, &g_im__im_cmd_response__descriptor },
+  { "im_ajust_call", &g_im__im_ajust_request__descriptor, &g_im__im_ajust_response__descriptor },
+  { "im_debug_call", &g_im__im_debug_request__descriptor, &g_im__im_debug_response__descriptor },
+  { "im_eeprom_read", &g_im__im_eeprom_request__descriptor, &g_im__im_eeprom_read_response__descriptor },
+  { "im_eeprom_write", &g_im__im_eeprom_request__descriptor, &g_im__im_eeprom_write_response__descriptor },
+  { "im_negative_pressure_adjust_call", &g_im__im_negative_pressure_request__descriptor, &g_im__im_negative_pressure_response__descriptor },
+  { "im_adjust_call_version_query", &g_im__im_version_query_request__descriptor, &g_im__im_version_query_response__descriptor },
 };
-
-int
-g_im__im_service__im_cmd_call (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, GIm__ImCmdRequest *input,
-                                    GIm__ImCmdResponse **output, grpc_c_status_t *status, long timeout)
-{
-    return grpc_c_client_request_unary(client, array, flags, g_im__im_service__methods[0], (void *)input, (void **)output, status, 0, 0, &g_im__im_cmd_request_packer, &g_im__im_cmd_request_unpacker, &g_im__im_cmd_request_free, &g_im__im_cmd_response_packer, &g_im__im_cmd_response_unpacker, &g_im__im_cmd_response_free, timeout);
-}
-
-int
-g_im__im_service__im_cmd_call__sync (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, grpc_c_context_t **context, GIm__ImCmdRequest *input, long timeout)
-{
-    return grpc_c_client_request_sync(client, array, flags, context, g_im__im_service__methods[0], input, 0, 0, &g_im__im_cmd_request_packer, &g_im__im_cmd_request_unpacker, &g_im__im_cmd_request_free, &g_im__im_cmd_response_packer,&g_im__im_cmd_response_unpacker, &g_im__im_cmd_response_free, timeout);
-}
-
-int
-g_im__im_service__im_cmd_call__async (grpc_c_client_t *client,
-                                     grpc_c_metadata_array_t *array, uint32_t flags,
-                                     GIm__ImCmdRequest *input,
-                                     grpc_c_client_callback_t *cb,
-                                     void *tag)
-{
-    return grpc_c_client_request_async(client, array, flags, g_im__im_service__methods[0], input, cb, tag, 0, 0, &g_im__im_cmd_request_packer, &g_im__im_cmd_request_unpacker, &g_im__im_cmd_request_free, &g_im__im_cmd_response_packer, &g_im__im_cmd_response_unpacker, &g_im__im_cmd_response_free);
-}
-
-int
-g_im__im_service__im_ajust_call (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, GIm__ImAjustRequest *input,
-                                      GIm__ImAjustResponse **output, grpc_c_status_t *status, long timeout)
-{
-    return grpc_c_client_request_unary(client, array, flags, g_im__im_service__methods[1], (void *)input, (void **)output, status, 0, 0, &g_im__im_ajust_request_packer, &g_im__im_ajust_request_unpacker, &g_im__im_ajust_request_free, &g_im__im_ajust_response_packer, &g_im__im_ajust_response_unpacker, &g_im__im_ajust_response_free, timeout);
-}
-
-int
-g_im__im_service__im_ajust_call__sync (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, grpc_c_context_t **context, GIm__ImAjustRequest *input, long timeout)
-{
-    return grpc_c_client_request_sync(client, array, flags, context, g_im__im_service__methods[1], input, 0, 0, &g_im__im_ajust_request_packer, &g_im__im_ajust_request_unpacker, &g_im__im_ajust_request_free, &g_im__im_ajust_response_packer,&g_im__im_ajust_response_unpacker, &g_im__im_ajust_response_free, timeout);
-}
-
-int
-g_im__im_service__im_ajust_call__async (grpc_c_client_t *client,
-                                       grpc_c_metadata_array_t *array, uint32_t flags,
-                                       GIm__ImAjustRequest *input,
-                                       grpc_c_client_callback_t *cb,
-                                       void *tag)
-{
-    return grpc_c_client_request_async(client, array, flags, g_im__im_service__methods[1], input, cb, tag, 0, 0, &g_im__im_ajust_request_packer, &g_im__im_ajust_request_unpacker, &g_im__im_ajust_request_free, &g_im__im_ajust_response_packer, &g_im__im_ajust_response_unpacker, &g_im__im_ajust_response_free);
-}
-
-int
-g_im__im_service__im_debug_call (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, GIm__ImDebugRequest *input,
-                                      GIm__ImDebugResponse **output, grpc_c_status_t *status, long timeout)
-{
-    return grpc_c_client_request_unary(client, array, flags, g_im__im_service__methods[2], (void *)input, (void **)output, status, 0, 0, &g_im__im_debug_request_packer, &g_im__im_debug_request_unpacker, &g_im__im_debug_request_free, &g_im__im_debug_response_packer, &g_im__im_debug_response_unpacker, &g_im__im_debug_response_free, timeout);
-}
-
-int
-g_im__im_service__im_debug_call__sync (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, grpc_c_context_t **context, GIm__ImDebugRequest *input, long timeout)
-{
-    return grpc_c_client_request_sync(client, array, flags, context, g_im__im_service__methods[2], input, 0, 0, &g_im__im_debug_request_packer, &g_im__im_debug_request_unpacker, &g_im__im_debug_request_free, &g_im__im_debug_response_packer,&g_im__im_debug_response_unpacker, &g_im__im_debug_response_free, timeout);
-}
-
-int
-g_im__im_service__im_debug_call__async (grpc_c_client_t *client,
-                                       grpc_c_metadata_array_t *array, uint32_t flags,
-                                       GIm__ImDebugRequest *input,
-                                       grpc_c_client_callback_t *cb,
-                                       void *tag)
-{
-    return grpc_c_client_request_async(client, array, flags, g_im__im_service__methods[2], input, cb, tag, 0, 0, &g_im__im_debug_request_packer, &g_im__im_debug_request_unpacker, &g_im__im_debug_request_free, &g_im__im_debug_response_packer, &g_im__im_debug_response_unpacker, &g_im__im_debug_response_free);
-}
-
-int
-g_im__im_service__im_eeprom_read (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, GIm__ImEepromRequest *input,
-                                       GIm__ImEepromReadResponse **output, grpc_c_status_t *status, long timeout)
-{
-    return grpc_c_client_request_unary(client, array, flags, g_im__im_service__methods[3], (void *)input, (void **)output, status, 0, 0, &g_im__im_eeprom_request_packer, &g_im__im_eeprom_request_unpacker, &g_im__im_eeprom_request_free, &g_im__im_eeprom_read_response_packer, &g_im__im_eeprom_read_response_unpacker, &g_im__im_eeprom_read_response_free, timeout);
-}
-
-int
-g_im__im_service__im_eeprom_read__sync (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, grpc_c_context_t **context, GIm__ImEepromRequest *input, long timeout)
-{
-    return grpc_c_client_request_sync(client, array, flags, context, g_im__im_service__methods[3], input, 0, 0, &g_im__im_eeprom_request_packer, &g_im__im_eeprom_request_unpacker, &g_im__im_eeprom_request_free, &g_im__im_eeprom_read_response_packer,&g_im__im_eeprom_read_response_unpacker, &g_im__im_eeprom_read_response_free, timeout);
-}
-
-int
-g_im__im_service__im_eeprom_read__async (grpc_c_client_t *client,
-                                        grpc_c_metadata_array_t *array, uint32_t flags,
-                                        GIm__ImEepromRequest *input,
-                                        grpc_c_client_callback_t *cb,
-                                        void *tag)
-{
-    return grpc_c_client_request_async(client, array, flags, g_im__im_service__methods[3], input, cb, tag, 0, 0, &g_im__im_eeprom_request_packer, &g_im__im_eeprom_request_unpacker, &g_im__im_eeprom_request_free, &g_im__im_eeprom_read_response_packer, &g_im__im_eeprom_read_response_unpacker, &g_im__im_eeprom_read_response_free);
-}
-
-int
-g_im__im_service__im_eeprom_write (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, GIm__ImEepromRequest *input,
-                                        GIm__ImEepromWriteResponse **output, grpc_c_status_t *status, long timeout)
-{
-    return grpc_c_client_request_unary(client, array, flags, g_im__im_service__methods[4], (void *)input, (void **)output, status, 0, 0, &g_im__im_eeprom_request_packer, &g_im__im_eeprom_request_unpacker, &g_im__im_eeprom_request_free, &g_im__im_eeprom_write_response_packer, &g_im__im_eeprom_write_response_unpacker, &g_im__im_eeprom_write_response_free, timeout);
-}
-
-int
-g_im__im_service__im_eeprom_write__sync (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, grpc_c_context_t **context, GIm__ImEepromRequest *input, long timeout)
-{
-    return grpc_c_client_request_sync(client, array, flags, context, g_im__im_service__methods[4], input, 0, 0, &g_im__im_eeprom_request_packer, &g_im__im_eeprom_request_unpacker, &g_im__im_eeprom_request_free, &g_im__im_eeprom_write_response_packer,&g_im__im_eeprom_write_response_unpacker, &g_im__im_eeprom_write_response_free, timeout);
-}
-
-int
-g_im__im_service__im_eeprom_write__async (grpc_c_client_t *client,
-                                         grpc_c_metadata_array_t *array, uint32_t flags,
-                                         GIm__ImEepromRequest *input,
-                                         grpc_c_client_callback_t *cb,
-                                         void *tag)
-{
-    return grpc_c_client_request_async(client, array, flags, g_im__im_service__methods[4], input, cb, tag, 0, 0, &g_im__im_eeprom_request_packer, &g_im__im_eeprom_request_unpacker, &g_im__im_eeprom_request_free, &g_im__im_eeprom_write_response_packer, &g_im__im_eeprom_write_response_unpacker, &g_im__im_eeprom_write_response_free);
-}
-
-int
-g_im__im_service__im_negative_pressure_adjust_call (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, GIm__ImNegativePressureRequest *input,
-                                                         GIm__ImNegativePressureResponse **output, grpc_c_status_t *status, long timeout)
-{
-    return grpc_c_client_request_unary(client, array, flags, g_im__im_service__methods[5], (void *)input, (void **)output, status, 0, 0, &g_im__im_negative_pressure_request_packer, &g_im__im_negative_pressure_request_unpacker, &g_im__im_negative_pressure_request_free, &g_im__im_negative_pressure_response_packer, &g_im__im_negative_pressure_response_unpacker, &g_im__im_negative_pressure_response_free, timeout);
-}
-
-int
-g_im__im_service__im_negative_pressure_adjust_call__sync (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, grpc_c_context_t **context, GIm__ImNegativePressureRequest *input, long timeout)
-{
-    return grpc_c_client_request_sync(client, array, flags, context, g_im__im_service__methods[5], input, 0, 0, &g_im__im_negative_pressure_request_packer, &g_im__im_negative_pressure_request_unpacker, &g_im__im_negative_pressure_request_free, &g_im__im_negative_pressure_response_packer,&g_im__im_negative_pressure_response_unpacker, &g_im__im_negative_pressure_response_free, timeout);
-}
-
-int
-g_im__im_service__im_negative_pressure_adjust_call__async (grpc_c_client_t *client,
-                                                          grpc_c_metadata_array_t *array, uint32_t flags,
-                                                          GIm__ImNegativePressureRequest *input,
-                                                          grpc_c_client_callback_t *cb,
-                                                          void *tag)
-{
-    return grpc_c_client_request_async(client, array, flags, g_im__im_service__methods[5], input, cb, tag, 0, 0, &g_im__im_negative_pressure_request_packer, &g_im__im_negative_pressure_request_unpacker, &g_im__im_negative_pressure_request_free, &g_im__im_negative_pressure_response_packer, &g_im__im_negative_pressure_response_unpacker, &g_im__im_negative_pressure_response_free);
-}
-
-int
-g_im__im_service__im_adjust_call_version_query (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, GIm__ImVersionQueryRequest *input,
-                                                     GIm__ImVersionQueryResponse **output, grpc_c_status_t *status, long timeout)
-{
-    return grpc_c_client_request_unary(client, array, flags, g_im__im_service__methods[6], (void *)input, (void **)output, status, 0, 0, &g_im__im_version_query_request_packer, &g_im__im_version_query_request_unpacker, &g_im__im_version_query_request_free, &g_im__im_version_query_response_packer, &g_im__im_version_query_response_unpacker, &g_im__im_version_query_response_free, timeout);
-}
-
-int
-g_im__im_service__im_adjust_call_version_query__sync (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, grpc_c_context_t **context, GIm__ImVersionQueryRequest *input, long timeout)
-{
-    return grpc_c_client_request_sync(client, array, flags, context, g_im__im_service__methods[6], input, 0, 0, &g_im__im_version_query_request_packer, &g_im__im_version_query_request_unpacker, &g_im__im_version_query_request_free, &g_im__im_version_query_response_packer,&g_im__im_version_query_response_unpacker, &g_im__im_version_query_response_free, timeout);
-}
-
-int
-g_im__im_service__im_adjust_call_version_query__async (grpc_c_client_t *client,
-                                                      grpc_c_metadata_array_t *array, uint32_t flags,
-                                                      GIm__ImVersionQueryRequest *input,
-                                                      grpc_c_client_callback_t *cb,
-                                                      void *tag)
-{
-    return grpc_c_client_request_async(client, array, flags, g_im__im_service__methods[6], input, cb, tag, 0, 0, &g_im__im_version_query_request_packer, &g_im__im_version_query_request_unpacker, &g_im__im_version_query_request_free, &g_im__im_version_query_response_packer, &g_im__im_version_query_response_unpacker, &g_im__im_version_query_response_free);
-}
-
-const char *g_im__pc_service__methods[] = {
-    "/g_im.pcService/ui_data_call",
-    "/g_im.pcService/ui_security_call",
-    "/g_im.pcService/ui_upgrade_call",
+const unsigned g_im__im_service__method_indices_by_name[] = {
+  6,        /* im_adjust_call_version_query */
+  1,        /* im_ajust_call */
+  0,        /* im_cmd_call */
+  2,        /* im_debug_call */
+  3,        /* im_eeprom_read */
+  4,        /* im_eeprom_write */
+  5         /* im_negative_pressure_adjust_call */
 };
-
-int
-g_im__pc_service__ui_data_call (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, GIm__ImUiData *input,
-                                     GIm__ImUiDataResponse **output, grpc_c_status_t *status, long timeout)
+const ProtobufCServiceDescriptor g_im__im_service__descriptor =
 {
-    return grpc_c_client_request_unary(client, array, flags, g_im__pc_service__methods[0], (void *)input, (void **)output, status, 0, 0, &g_im__im_ui_data_packer, &g_im__im_ui_data_unpacker, &g_im__im_ui_data_free, &g_im__im_ui_data_response_packer, &g_im__im_ui_data_response_unpacker, &g_im__im_ui_data_response_free, timeout);
+  PROTOBUF_C__SERVICE_DESCRIPTOR_MAGIC,
+  "g_im.imService",
+  "imService",
+  "GIm__ImService",
+  "g_im",
+  7,
+  g_im__im_service__method_descriptors,
+  g_im__im_service__method_indices_by_name
+};
+void g_im__im_service__im_cmd_call(ProtobufCService *service,
+                                   const GIm__ImCmdRequest *input,
+                                   GIm__ImCmdResponse_Closure closure,
+                                   void *closure_data)
+{
+  assert(service->descriptor == &g_im__im_service__descriptor);
+  service->invoke(service, 0, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
 }
-
-int
-g_im__pc_service__ui_data_call__sync (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, grpc_c_context_t **context, GIm__ImUiData *input, long timeout)
+void g_im__im_service__im_ajust_call(ProtobufCService *service,
+                                     const GIm__ImAjustRequest *input,
+                                     GIm__ImAjustResponse_Closure closure,
+                                     void *closure_data)
 {
-    return grpc_c_client_request_sync(client, array, flags, context, g_im__pc_service__methods[0], input, 0, 0, &g_im__im_ui_data_packer, &g_im__im_ui_data_unpacker, &g_im__im_ui_data_free, &g_im__im_ui_data_response_packer,&g_im__im_ui_data_response_unpacker, &g_im__im_ui_data_response_free, timeout);
+  assert(service->descriptor == &g_im__im_service__descriptor);
+  service->invoke(service, 1, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
 }
-
-int
-g_im__pc_service__ui_data_call__async (grpc_c_client_t *client,
-                                      grpc_c_metadata_array_t *array, uint32_t flags,
-                                      GIm__ImUiData *input,
-                                      grpc_c_client_callback_t *cb,
-                                      void *tag)
+void g_im__im_service__im_debug_call(ProtobufCService *service,
+                                     const GIm__ImDebugRequest *input,
+                                     GIm__ImDebugResponse_Closure closure,
+                                     void *closure_data)
 {
-    return grpc_c_client_request_async(client, array, flags, g_im__pc_service__methods[0], input, cb, tag, 0, 0, &g_im__im_ui_data_packer, &g_im__im_ui_data_unpacker, &g_im__im_ui_data_free, &g_im__im_ui_data_response_packer, &g_im__im_ui_data_response_unpacker, &g_im__im_ui_data_response_free);
+  assert(service->descriptor == &g_im__im_service__descriptor);
+  service->invoke(service, 2, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
 }
-
-int
-g_im__pc_service__ui_security_call (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, GIm__ImSecurityData *input,
-                                         GIm__ImUiDataResponse **output, grpc_c_status_t *status, long timeout)
+void g_im__im_service__im_eeprom_read(ProtobufCService *service,
+                                      const GIm__ImEepromRequest *input,
+                                      GIm__ImEepromReadResponse_Closure closure,
+                                      void *closure_data)
 {
-    return grpc_c_client_request_unary(client, array, flags, g_im__pc_service__methods[1], (void *)input, (void **)output, status, 0, 0, &g_im__im_security_data_packer, &g_im__im_security_data_unpacker, &g_im__im_security_data_free, &g_im__im_ui_data_response_packer, &g_im__im_ui_data_response_unpacker, &g_im__im_ui_data_response_free, timeout);
+  assert(service->descriptor == &g_im__im_service__descriptor);
+  service->invoke(service, 3, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
 }
-
-int
-g_im__pc_service__ui_security_call__sync (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, grpc_c_context_t **context, GIm__ImSecurityData *input, long timeout)
+void g_im__im_service__im_eeprom_write(ProtobufCService *service,
+                                       const GIm__ImEepromRequest *input,
+                                       GIm__ImEepromWriteResponse_Closure closure,
+                                       void *closure_data)
 {
-    return grpc_c_client_request_sync(client, array, flags, context, g_im__pc_service__methods[1], input, 0, 0, &g_im__im_security_data_packer, &g_im__im_security_data_unpacker, &g_im__im_security_data_free, &g_im__im_ui_data_response_packer,&g_im__im_ui_data_response_unpacker, &g_im__im_ui_data_response_free, timeout);
+  assert(service->descriptor == &g_im__im_service__descriptor);
+  service->invoke(service, 4, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
 }
-
-int
-g_im__pc_service__ui_security_call__async (grpc_c_client_t *client,
-                                          grpc_c_metadata_array_t *array, uint32_t flags,
-                                          GIm__ImSecurityData *input,
-                                          grpc_c_client_callback_t *cb,
-                                          void *tag)
+void g_im__im_service__im_negative_pressure_adjust_call(ProtobufCService *service,
+                                                        const GIm__ImNegativePressureRequest *input,
+                                                        GIm__ImNegativePressureResponse_Closure closure,
+                                                        void *closure_data)
 {
-    return grpc_c_client_request_async(client, array, flags, g_im__pc_service__methods[1], input, cb, tag, 0, 0, &g_im__im_security_data_packer, &g_im__im_security_data_unpacker, &g_im__im_security_data_free, &g_im__im_ui_data_response_packer, &g_im__im_ui_data_response_unpacker, &g_im__im_ui_data_response_free);
+  assert(service->descriptor == &g_im__im_service__descriptor);
+  service->invoke(service, 5, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
 }
-
-int
-g_im__pc_service__ui_upgrade_call (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, GIm__ImDeviceUpgradeData *input,
-                                        GIm__ImUiDataResponse **output, grpc_c_status_t *status, long timeout)
+void g_im__im_service__im_adjust_call_version_query(ProtobufCService *service,
+                                                    const GIm__ImVersionQueryRequest *input,
+                                                    GIm__ImVersionQueryResponse_Closure closure,
+                                                    void *closure_data)
 {
-    return grpc_c_client_request_unary(client, array, flags, g_im__pc_service__methods[2], (void *)input, (void **)output, status, 0, 0, &g_im__im_device_upgrade_data_packer, &g_im__im_device_upgrade_data_unpacker, &g_im__im_device_upgrade_data_free, &g_im__im_ui_data_response_packer, &g_im__im_ui_data_response_unpacker, &g_im__im_ui_data_response_free, timeout);
+  assert(service->descriptor == &g_im__im_service__descriptor);
+  service->invoke(service, 6, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
 }
-
-int
-g_im__pc_service__ui_upgrade_call__sync (grpc_c_client_t *client, grpc_c_metadata_array_t *array, uint32_t flags, grpc_c_context_t **context, GIm__ImDeviceUpgradeData *input, long timeout)
+void g_im__im_service__init (GIm__ImService_Service *service,
+                             GIm__ImService_ServiceDestroy destroy)
 {
-    return grpc_c_client_request_sync(client, array, flags, context, g_im__pc_service__methods[2], input, 0, 0, &g_im__im_device_upgrade_data_packer, &g_im__im_device_upgrade_data_unpacker, &g_im__im_device_upgrade_data_free, &g_im__im_ui_data_response_packer,&g_im__im_ui_data_response_unpacker, &g_im__im_ui_data_response_free, timeout);
+  protobuf_c_service_generated_init (&service->base,
+                                     &g_im__im_service__descriptor,
+                                     (ProtobufCServiceDestroy) destroy);
 }
-
-int
-g_im__pc_service__ui_upgrade_call__async (grpc_c_client_t *client,
-                                         grpc_c_metadata_array_t *array, uint32_t flags,
-                                         GIm__ImDeviceUpgradeData *input,
-                                         grpc_c_client_callback_t *cb,
-                                         void *tag)
+static const ProtobufCMethodDescriptor g_im__pc_service__method_descriptors[3] =
 {
-    return grpc_c_client_request_async(client, array, flags, g_im__pc_service__methods[2], input, cb, tag, 0, 0, &g_im__im_device_upgrade_data_packer, &g_im__im_device_upgrade_data_unpacker, &g_im__im_device_upgrade_data_free, &g_im__im_ui_data_response_packer, &g_im__im_ui_data_response_unpacker, &g_im__im_ui_data_response_free);
+  { "ui_data_call", &g_im__im_ui_data__descriptor, &g_im__im_ui_data_response__descriptor },
+  { "ui_security_call", &g_im__im_security_data__descriptor, &g_im__im_ui_data_response__descriptor },
+  { "ui_upgrade_call", &g_im__im_device_upgrade_data__descriptor, &g_im__im_ui_data_response__descriptor },
+};
+const unsigned g_im__pc_service__method_indices_by_name[] = {
+  0,        /* ui_data_call */
+  1,        /* ui_security_call */
+  2         /* ui_upgrade_call */
+};
+const ProtobufCServiceDescriptor g_im__pc_service__descriptor =
+{
+  PROTOBUF_C__SERVICE_DESCRIPTOR_MAGIC,
+  "g_im.pcService",
+  "pcService",
+  "GIm__PcService",
+  "g_im",
+  3,
+  g_im__pc_service__method_descriptors,
+  g_im__pc_service__method_indices_by_name
+};
+void g_im__pc_service__ui_data_call(ProtobufCService *service,
+                                    const GIm__ImUiData *input,
+                                    GIm__ImUiDataResponse_Closure closure,
+                                    void *closure_data)
+{
+  assert(service->descriptor == &g_im__pc_service__descriptor);
+  service->invoke(service, 0, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
+}
+void g_im__pc_service__ui_security_call(ProtobufCService *service,
+                                        const GIm__ImSecurityData *input,
+                                        GIm__ImUiDataResponse_Closure closure,
+                                        void *closure_data)
+{
+  assert(service->descriptor == &g_im__pc_service__descriptor);
+  service->invoke(service, 1, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
+}
+void g_im__pc_service__ui_upgrade_call(ProtobufCService *service,
+                                       const GIm__ImDeviceUpgradeData *input,
+                                       GIm__ImUiDataResponse_Closure closure,
+                                       void *closure_data)
+{
+  assert(service->descriptor == &g_im__pc_service__descriptor);
+  service->invoke(service, 2, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
+}
+void g_im__pc_service__init (GIm__PcService_Service *service,
+                             GIm__PcService_ServiceDestroy destroy)
+{
+  protobuf_c_service_generated_init (&service->base,
+                                     &g_im__pc_service__descriptor,
+                                     (ProtobufCServiceDestroy) destroy);
 }
